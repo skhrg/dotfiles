@@ -115,6 +115,31 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
+set $m1 HDMI-0
+set $m2 DVI-D-0
+
+# set workspace default monitors
+workspace $ws1 output $m1 
+workspace $ws2 output $m1 
+workspace $ws3 output $m1 
+workspace $ws4 output $m1 
+workspace $ws5 output $m1 
+workspace $ws6 output $m1 
+workspace $ws7 output $m1 
+workspace $ws8 output $m1 
+workspace $ws9 output $m1 
+workspace $ws10 output $m1 
+workspace $ws11 output $m2 
+workspace $ws12 output $m2 
+workspace $ws13 output $m2 
+workspace $ws14 output $m2 
+workspace $ws15 output $m2 
+workspace $ws16 output $m2 
+workspace $ws17 output $m2 
+workspace $ws18 output $m2 
+workspace $ws19 output $m2 
+workspace $ws20 output $m2 
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -237,11 +262,12 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+h exec nautilus
 bindsym $mod+Shift+s exec flatpak run org.signal.Signal
 bindsym $mod+Shift+a exec atom
-bindsym $mod+Shift+m exec flatpak run com.github.marktext.marktext
+bindsym $mod+Shift+m exec flatpak run im.riot.Riot
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
 bindsym $mod+Shift+t exec flatpak run com.github.micahflee.torbrowser-launcher
 
+bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
 # move focused workspace between monitors
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
@@ -252,7 +278,7 @@ bindsym --release Shift+Print exec gnome-screenshot -a
 bindsym --release ctrl+Print exec gnome-screenshot -c
 bindsym --release ctrl+Shift+Print exec gnome-screenshot -c -a
 
-exec_always feh --bg-fill '/home/lordskh/MEGA/Pictures/Wallpapers/Space/CLASS.jpg'/ '/home/lordskh/MEGA/Pictures/Wallpapers/Space/CLASS Vertical.jpg'
-exec compton -f -b --backend glx --vsync opengl-swc
+exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS Vertical.jpg'
+exec compton -f -b
 exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x521 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
 exec megasync
