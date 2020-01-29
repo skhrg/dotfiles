@@ -126,3 +126,9 @@ imap <C-Left> <C-o><C-Left>
 imap <C-Right> <C-o><C-Right>
 imap <C-]> <C-o><C-]>
 imap <C-[> <C-o><C-[>
+
+nmap <C-d> :w<CR>
+nmap <C-e> :q<CR>
+
+imap <C-d> <C-o><C-d>
+imap <C-e> <C-o><C-e>
