@@ -280,12 +280,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+Shift+h exec nautilus
-bindsym $mod+Shift+s exec flatpak run org.signal.Signal
-bindsym $mod+Shift+a exec atom
-bindsym $mod+Shift+m exec flatpak run im.riot.Riot
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+c exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
-bindsym $mod+Shift+t exec flatpak run com.github.micahflee.torbrowser-launcher
 
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
 # move focused workspace between monitors
