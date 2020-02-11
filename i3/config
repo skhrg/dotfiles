@@ -161,6 +161,16 @@ bindcode $mod+79 workspace $ws17
 bindcode $mod+80 workspace $ws18
 bindcode $mod+81 workspace $ws19
 bindcode $mod+90 workspace $ws20
+bindcode $mod+Mod2+87 workspace $ws11
+bindcode $mod+Mod2+88 workspace $ws12
+bindcode $mod+Mod2+89 workspace $ws13
+bindcode $mod+Mod2+83 workspace $ws14
+bindcode $mod+Mod2+84 workspace $ws15
+bindcode $mod+Mod2+85 workspace $ws16
+bindcode $mod+Mod2+79 workspace $ws17
+bindcode $mod+Mod2+80 workspace $ws18
+bindcode $mod+Mod2+81 workspace $ws19
+bindcode $mod+Mod2+90 workspace $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -183,6 +193,16 @@ bindcode $mod+Shift+79 move container to workspace $ws17
 bindcode $mod+Shift+80 move container to workspace $ws18
 bindcode $mod+Shift+81 move container to workspace $ws19
 bindcode $mod+Shift+90 move container to workspace $ws20
+bindcode $mod+Mod2+Shift+87 move container to workspace $ws11
+bindcode $mod+Mod2+Shift+88 move container to workspace $ws12
+bindcode $mod+Mod2+Shift+89 move container to workspace $ws13
+bindcode $mod+Mod2+Shift+83 move container to workspace $ws14
+bindcode $mod+Mod2+Shift+84 move container to workspace $ws15
+bindcode $mod+Mod2+Shift+85 move container to workspace $ws16
+bindcode $mod+Mod2+Shift+79 move container to workspace $ws17
+bindcode $mod+Mod2+Shift+80 move container to workspace $ws18
+bindcode $mod+Mod2+Shift+81 move container to workspace $ws19
+bindcode $mod+Mod2+Shift+90 move container to workspace $ws20
 
 # reload the configuration file
 #bindsym $mod+Shift+c reload
