@@ -260,7 +260,7 @@ bindsym $mod+F1 exec ~/.config/i3/brightness.sh /sys/class/backlight/edp-backlig
 bindsym $mod+Shift+h exec pcmanfm 
 bindsym $mod+Shift+f exec firefox
 
-bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
+bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/Spike Silhouette.png' 
 # move focused workspace between monitors
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
@@ -271,7 +271,7 @@ bindsym --release Shift+Print exec gnome-screenshot -a
 bindsym --release ctrl+Print exec gnome-screenshot -c
 bindsym --release ctrl+Shift+Print exec gnome-screenshot -c -a
 
-exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' 
+exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/LOGH.jpg' 
 #exec compton -f -b --vsync opengl-swc 
 exec nm-applet
 exec mate-power-manager
