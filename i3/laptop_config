@@ -274,4 +274,5 @@ bindsym --release ctrl+Shift+Print exec gnome-screenshot -c -a
 exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' 
 #exec compton -f -b --vsync opengl-swc 
 exec nm-applet
+exec mate-power-manager
 #exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x521 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
