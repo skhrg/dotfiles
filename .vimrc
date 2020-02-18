@@ -57,10 +57,10 @@ let NERDTreeShowHidden=1
 nmap <silent> <Esc>h :sp<CR>
 nmap <silent> <Esc>v :vsplit<CR>
 nmap <silent> <Esc>w :wincmd c<CR>
-nmap <silent> <Esc>[1;3A :wincmd k<CR>
-nmap <silent> <Esc>[1;3B :wincmd j<CR>
-nmap <silent> <Esc>[1;3D :wincmd h<CR>
-nmap <silent> <Esc>[1;3C :wincmd l<CR>
+nmap <silent> <Esc><Up> :wincmd k<CR>
+nmap <silent> <Esc><Down> :wincmd j<CR>
+nmap <silent> <Esc><Left> :wincmd h<CR>
+nmap <silent> <Esc><Right> :wincmd l<CR>
 nmap <silent> <Esc>. :wincmd ><CR>
 nmap <silent> <Esc>, :wincmd <<CR>
 nmap <silent> <Esc>; :wincmd -<CR>
@@ -70,18 +70,18 @@ nmap <silent> <Esc>t :wincmd T<CR>
 nmap <silent> <Esc>x :wincmd x<CR>
 nmap <silent> <Esc>[ :wincmd R<CR>
 nmap <silent> <Esc>] :wincmd r<CR>
-nmap <silent> <leader><Esc>[1;3A :wincmd K<CR>
-nmap <silent> <leader><Esc>[1;3B :wincmd J<CR>
-nmap <silent> <leader><Esc>[1;3D :wincmd H<CR>
-nmap <silent> <leader><Esc>[1;3C :wincmd L<CR>
+nmap <silent> <leader><Esc><Up> :wincmd K<CR>
+nmap <silent> <leader><Esc><Down> :wincmd J<CR>
+nmap <silent> <leader><Esc><Left> :wincmd H<CR>
+nmap <silent> <leader><Esc><Right> :wincmd L<CR>
 
 imap <Esc>h <C-o><Esc>h
 imap <Esc>v <C-o><Esc>v
 imap <Esc>w <C-o><Esc>w
-imap <Esc>[1;3A <C-o><Esc>[1;3A
-imap <Esc>[1;3B <C-o><Esc>[1;3B
-imap <Esc>[1;3D <C-o><Esc>[1;3D
-imap <Esc>[1;3C <C-o><Esc>[1;3C
+imap <Esc><Up> <C-o><Esc><Up>
+imap <Esc><Down> <C-o><Esc><Down>
+imap <Esc><Left> <C-o><Esc><Left>
+imap <Esc><Right> <C-o><Esc><Right>
 imap <Esc>. <C-o><Esc>.
 imap <Esc>, <C-o><Esc>,
 imap <Esc>; <C-o><Esc>;
