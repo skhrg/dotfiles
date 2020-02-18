@@ -1,4 +1,4 @@
-! -----------------------------------------------------------------------------
+!-------------------------------------------------
 ! URxvt specific settings
 ! -----------------------------------------------------------------------------
 ! Perl extensions
@@ -11,9 +11,9 @@ URxvt.url-launcher: /usr/bin/xdg-open
 gRxvt.matcher.button: 1
 ! Get rid of ugly scroll bar
 URxvt.scrollBar: false
-! Transparance
-URxvt.transparent:   true
-URxvt.shading:       10
+!! Transparance
+!URxvt.transparent:   true
+!URxvt.shading:       10
 ! -----------------------------------------------------------------------------
 
 ! -----------------------------------------------------------------------------
