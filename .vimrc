@@ -5,8 +5,9 @@ execute pathogen#infect()
 
 syntax enable
 set background=dark
-colorscheme solarized
-
+let g:gruvbox_italic=1
+colorscheme gruvbox 
+let g:airline_theme='solarized'
 syntax on
 filetype on
 filetype indent on
