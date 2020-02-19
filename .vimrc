@@ -121,6 +121,8 @@ nmap <leader><C-w> :lclose<CR>
 
 map <ESC>Od <C-Left>
 map <ESC>Oc <C-Right>
+map <ESC>Oa <C-Up>
+map <ESC>Ob <C-Down>
 
 nmap <C-t> :tabnew<CR>
 nmap <C-w> :tabclose<CR> 
@@ -143,3 +145,8 @@ imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
 
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+nmap <C-Down> <Plug>IMAP_JumpForward
+nmap <C-Up> <Plug>IMAP_JumpBack
+imap <C-Down> <Plug>IMAP_JumpForward
+imap <C-Up> <Plug>IMAP_JumpBack
