@@ -1,3 +1,4 @@
+set nocompatible
 set history=50
 set ruler
 
@@ -118,6 +119,9 @@ nmap <F8> :SyntasticCheck<CR>
 nmap <leader><F8> :Errors<CR>
 nmap <leader><C-w> :lclose<CR>
 
+map <ESC>Od <C-Left>
+map <ESC>Oc <C-Right>
+
 nmap <C-t> :tabnew<CR>
 nmap <C-w> :tabclose<CR> 
 nmap <C-Left> :tabprevious<CR>
@@ -137,3 +141,5 @@ nmap <C-e> :q<CR>
 
 imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
+
+let g:tex_flavor='latex'
