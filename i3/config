@@ -238,11 +238,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $bg-color 	         #282828
+set $inactive-bg-color   #282828
+set $text-color          #ebdbb2
+set $inactive-text-color #928374
+set $urgent-bg-color     #cc241d
 
 # window colors
 #                       border              background         text                 indicator
@@ -259,7 +259,8 @@ bar {
         status_command i3status -c ~/.config/i3/i3status.conf
 	colors {
 		background $bg-color
-	    	separator #757575
+	    separator $text-color
+		statusline $text-color 
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -279,7 +280,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+Shift+h exec spacefm ~/Documents 
+bindsym $mod+Shift+h exec spacefm -wn ~/Documents 
 bindsym $mod+Shift+f exec firefox
 
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
