@@ -20,10 +20,11 @@ alias please="sudo"
 alias install="sudo dnf install"
 alias update="sudo dnf update && flatpak update"
 alias dd="sudo dd status='progress'"
+alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 
 alias i3c="vim ~/.config/i3/config"
-alias vc="vim ~/.vimrc"
-alias bsc="vim ~/.bashrc"
+alias vrc="vim ~/.vimrc"
+alias brc="vim ~/.bashrc"
 
 alias omar="ssh -XC omar.pha.jhu.edu"
 alias kima="ssh -XC kima.pha.jhu.edu"
