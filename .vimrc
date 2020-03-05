@@ -20,6 +20,7 @@ set showmatch
 set showmode
 set wildchar=<TAB>
 set wildmenu
+set t_BE=
 
 set autoindent
 set copyindent
