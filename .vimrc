@@ -151,3 +151,10 @@ nmap <C-Down> <Plug>IMAP_JumpForward
 nmap <C-Up> <Plug>IMAP_JumpBack
 imap <C-Down> <Plug>IMAP_JumpForward
 imap <C-Up> <Plug>IMAP_JumpBack
+
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.md set complete+=kspell
+autocmd BufRead,BufNewFile *.txt setlocal spell
+autocmd BufRead,BufNewFile *.txt set complete+=kspell
+autocmd BufRead,BufNewFile *.tex setlocal spell
+autocmd BufRead,BufNewFile *.tex set complete+=kspell
