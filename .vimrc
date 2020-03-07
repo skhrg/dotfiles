@@ -158,3 +158,13 @@ autocmd BufRead,BufNewFile *.txt setlocal spell
 autocmd BufRead,BufNewFile *.txt set complete+=kspell
 autocmd BufRead,BufNewFile *.tex setlocal spell
 autocmd BufRead,BufNewFile *.tex set complete+=kspell
+
+command -nargs=1 Silent
+            \   execute 'silent ' . <q-args>
+            \ | execute 'redraw!'
+
+command PDF Silent exec "!pandoc % -o %:r.pdf &"
+nmap <C-p> :w<CR>:PDF<CR>
+imap <C-p> <C-o><C-p>
+command PDFview Silent exec "!okular %:r.pdf &"
+nmap <leader><C-p> :PDFview<CR>
