@@ -147,10 +147,11 @@ imap <C-e> <C-o><C-e>
 
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_CustomTemplateDirectory='~/Documents/Projects/TexTemplates'
 nmap <C-Down> <Plug>IMAP_JumpForward
 nmap <C-Up> <Plug>IMAP_JumpBack
-imap <C-Down> <Plug>IMAP_JumpForward
-imap <C-Up> <Plug>IMAP_JumpBack
+imap <C-Down> <C-o><C-Down> 
+imap <C-Up> <C-o><C-Up>
 
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.md set complete+=kspell
