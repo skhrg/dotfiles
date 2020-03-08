@@ -133,7 +133,7 @@ nmap <C-]> :+tabmove<CR>
 nmap <C-[> :-tabmove<CR>
 
 imap <C-t> <C-o><C-t>
-imap <C-w> <C-o><C-t>
+imap <C-w> <C-o><C-w>
 imap <C-Left> <C-o><C-Left>
 imap <C-Right> <C-o><C-Right>
 imap <C-]> <C-o><C-]>
@@ -164,8 +164,11 @@ command -nargs=1 Silent
             \   execute 'silent ' . <q-args>
             \ | execute 'redraw!'
 
+command TexPDF Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
+
 nmap <C-p> :w<CR>:PDF<CR>
+autocmd FileType tex nmap <C-p> :w<CR>:TexPDF<CR>
 imap <C-p> <C-o><C-p>
 command PDFview Silent exec "!okular %:r.pdf &"
 nmap <leader><C-p> :PDFview<CR>
