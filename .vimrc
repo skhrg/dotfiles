@@ -1,27 +1,36 @@
+" Basic stuff
 set nocompatible
 set history=50
 set ruler
+let mapleader = " "
+set t_BE=
 
+" Use pathogen
 execute pathogen#infect()
 
+" Colors
 syntax enable
 set background=dark
+colorscheme gruvbox
 let g:gruvbox_italic=1
-colorscheme gruvbox 
 let g:airline_theme='solarized'
-syntax on
+
+" Enable filetype stuff
 filetype on
 filetype indent on
 filetype plugin on
 
+" Visualize things better
 set hlsearch
 set nu
 set showmatch
 set showmode
+
+" Wildcard stuff
 set wildchar=<TAB>
 set wildmenu
-set t_BE=
 
+" Indentation stuff
 set autoindent
 set copyindent
 set smarttab
@@ -30,15 +39,27 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+" Map arrows to always work
+map <ESC>Od <C-Left>
+map <ESC>Oc <C-Right>
+map <ESC>Oa <C-Up>
+map <ESC>Ob <C-Down>
+
+" Better silence that redraws
+command -nargs=1 Silent
+            \   execute 'silent ' . <q-args>
+            \ | execute 'redraw!'
+
+" Statusline
 set laststatus=2
-
-
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
-set statusline+=\ \ \ [%{&ff}/%Y] 
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
+let g:airline#extensions#tabline#enabled = 1
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+set statusline+=\ \ \ [%{&ff}/%Y]
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
 set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
-
-let mapleader = " "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
@@ -53,8 +74,16 @@ function! HasPaste()
     endif
 endfunction
 
+" Nerdtree setup
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+
+" Splits
+set splitbelow
+set splitright
 
 nmap <silent> <Esc>h :sp<CR>
 nmap <silent> <Esc>v :vsplit<CR>
@@ -94,43 +123,25 @@ imap <Esc>x <C-o><Esc>x
 imap <Esc>[ <C-o><Esc>[
 imap <Esc>] <C-o><Esc>]
 
-set splitbelow
-set splitright
-
-set mousefocus
-
-let g:NERDDefaultAlign = 'left'
-let g:NERDCompactSexyComs = 1
-let g:NERDCommentEmptyLines = 1
-
-let g:airline#extensions#tabline#enabled = 1
-
-nmap <C-m> :TagbarToggle<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0 
-let g:syntastic_auto_loc_list = 0 
-let g:syntastic_check_on_open = 0 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 nmap <F8> :SyntasticCheck<CR>
 nmap <leader><F8> :Errors<CR>
 nmap <leader><C-w> :lclose<CR>
 
-map <ESC>Od <C-Left>
-map <ESC>Oc <C-Right>
-map <ESC>Oa <C-Up>
-map <ESC>Ob <C-Down>
-
+" Tabs
 nmap <C-t> :tabnew<CR>
-nmap <C-w> :tabclose<CR> 
+nmap <C-w> :tabclose<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 nmap <C-]> :+tabmove<CR>
 nmap <C-[> :-tabmove<CR>
+nmap <C-d> :w<CR>
+nmap <C-e> :q<CR>
 
 imap <C-t> <C-o><C-t>
 imap <C-w> <C-o><C-w>
@@ -138,21 +149,19 @@ imap <C-Left> <C-o><C-Left>
 imap <C-Right> <C-o><C-Right>
 imap <C-]> <C-o><C-]>
 imap <C-[> <C-o><C-[>
-
-nmap <C-d> :w<CR>
-nmap <C-e> :q<CR>
-
 imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
 
+" LaTeX settings
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CustomTemplateDirectory='~/Documents/Projects/TexTemplates'
 nmap <C-Down> <Plug>IMAP_JumpForward
 nmap <C-Up> <Plug>IMAP_JumpBack
-imap <C-Down> <C-o><C-Down> 
+imap <C-Down> <C-o><C-Down>
 imap <C-Up> <C-o><C-Up>
 
+" Spellcheck for files that I usually need it in
 autocmd FileType markdown setlocal spell
 autocmd FileType markdown set complete+=kspell
 autocmd FileType text setlocal spell
@@ -160,15 +169,12 @@ autocmd FileType text set complete+=kspell
 autocmd FileType tex setlocal spell
 autocmd FileType tex set complete+=kspell
 
-command -nargs=1 Silent
-            \   execute 'silent ' . <q-args>
-            \ | execute 'redraw!'
-
+" PDF production stuff
 command TexPDF Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
+command PDFview Silent exec "!okular %:r.pdf &"
 
 nmap <C-p> :w<CR>:PDF<CR>
 autocmd FileType tex nmap <C-p> :w<CR>:TexPDF<CR>
 imap <C-p> <C-o><C-p>
-command PDFview Silent exec "!okular %:r.pdf &"
 nmap <leader><C-p> :PDFview<CR>
