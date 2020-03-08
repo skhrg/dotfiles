@@ -153,12 +153,12 @@ nmap <C-Up> <Plug>IMAP_JumpBack
 imap <C-Down> <C-o><C-Down> 
 imap <C-Up> <C-o><C-Up>
 
-autocmd BufRead,BufNewFile *.md setlocal spell
-autocmd BufRead,BufNewFile *.md set complete+=kspell
-autocmd BufRead,BufNewFile *.txt setlocal spell
-autocmd BufRead,BufNewFile *.txt set complete+=kspell
-autocmd BufRead,BufNewFile *.tex setlocal spell
-autocmd BufRead,BufNewFile *.tex set complete+=kspell
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown set complete+=kspell
+autocmd FileType text setlocal spell
+autocmd FileType text set complete+=kspell
+autocmd FileType tex setlocal spell
+autocmd FileType tex set complete+=kspell
 
 command -nargs=1 Silent
             \   execute 'silent ' . <q-args>
