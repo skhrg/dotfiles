@@ -15,6 +15,13 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# Default programs:
+ export EDITOR="vim"
+ export TERMINAL="urxvt256c"
+ export READER="okular"
+ export FILE="spacefm"
+ export BROWSER="firefox"
+
 # User specific aliases and functions
 alias please="sudo"
 alias install="sudo dnf install"
