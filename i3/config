@@ -288,12 +288,12 @@ bindsym XF86AudioLowerVolume workspace prev_on_output
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5%
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc previous
 
 bindsym $mod+Shift+h exec spacefm -wn ~/Documents 
 bindsym $mod+Shift+f exec firefox
@@ -312,5 +312,6 @@ bindsym --release ctrl+Shift+Print exec gnome-screenshot -c -a
 exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS Vertical.jpg'
 exec compton -f -b --vsync opengl-swc 
 exec nm-applet
+exec mpd
 exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x521 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
 exec xinput set-prop 8 297 .8
