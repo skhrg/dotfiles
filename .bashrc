@@ -28,6 +28,7 @@ alias install="sudo dnf install"
 alias update="sudo dnf update && flatpak update"
 alias dd="sudo dd status='progress'"
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
+alias pubcp='function _pubcp(){ cp  --no-preserve=mode $1 /home/Disks/TOWER/; };_pubcp'
 
 alias i3c="vim ~/.config/i3/config"
 alias vrc="vim ~/.vimrc"
@@ -49,6 +50,7 @@ alias gpp='git pull && git push'
 alias gpr='git pull --rebase'
 alias gprp='git pull --rebase && git pull'
 
+# Gruvbox color correction
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 #read -r -d '' PyURxvtMeta8 <<-'EOF'
