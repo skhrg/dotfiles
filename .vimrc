@@ -173,8 +173,10 @@ autocmd FileType tex set complete+=kspell
 command TexPDF Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
 command PDFview Silent exec "!okular %:r.pdf &"
+command PDFbeamer Silent exec "!pandoc -t beamer % -o %:r.pdf &"
 
 nmap <C-p> :w<bar>:PDF<CR>
 autocmd FileType tex nmap <C-p> :w<bar>:TexPDF<CR>
 imap <C-p> <C-o><C-p>
 nmap <leader><C-p> :PDFview<CR>
+nmap <leader>pb :w<bar>:PDFbeamer<CR>
