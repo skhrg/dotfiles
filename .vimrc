@@ -177,6 +177,7 @@ command PDFbeamer Silent exec "!pandoc -t beamer % -o %:r.pdf &"
 
 nmap <C-p> :w<bar>:PDF<CR>
 autocmd FileType tex nmap <C-p> :w<bar>:TexPDF<CR>
+autocmd BufRead,BufNewFile *.bmd nmap <C-p> :w<bar>:PDFbeamer<CR>
+autocmd BufRead,BufNewFile *.bmd set filetype=markdown
 imap <C-p> <C-o><C-p>
 nmap <leader><C-p> :PDFview<CR>
-nmap <leader>pb :w<bar>:PDFbeamer<CR>
