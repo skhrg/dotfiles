@@ -170,13 +170,13 @@ autocmd FileType tex setlocal spell
 autocmd FileType tex set complete+=kspell
 
 " PDF production stuff
-command TexPDF Silent call Tex_CompileLatex()
+command PDFtex Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
 command PDFview Silent exec "!okular %:r.pdf &"
 command PDFbeamer Silent exec "!pandoc -t beamer % -o %:r.pdf &"
 
 nmap <C-p> :w<bar>:PDF<CR>
-autocmd FileType tex nmap <C-p> :w<bar>:TexPDF<CR>
+autocmd FileType tex nmap <C-p> :w<bar>:PDFtex<CR>
 autocmd BufRead,BufNewFile *.bmd nmap <C-p> :w<bar>:PDFbeamer<CR>
 autocmd BufRead,BufNewFile *.bmd set filetype=markdown
 imap <C-p> <C-o><C-p>
