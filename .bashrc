@@ -16,11 +16,11 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # Default programs:
- export EDITOR="vim"
- export TERMINAL="urxvt256c"
- export READER="okular"
- export FILE="nnn"
- export BROWSER="firefox"
+export EDITOR="vim"
+export TERMINAL="urxvt256c"
+export READER="okular"
+export FILE="nnn"
+export BROWSER="firefox"
 
 # nnn
 export NNN_PLUG="':-_|urxvt256c"
