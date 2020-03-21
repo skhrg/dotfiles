@@ -19,8 +19,11 @@ export PATH
  export EDITOR="vim"
  export TERMINAL="urxvt256c"
  export READER="okular"
- export FILE="spacefm"
+ export FILE="nnn"
  export BROWSER="firefox"
+
+# nnn
+export NNN_PLUG="':-_|urxvt256c"
 
 # User specific aliases and functions
 alias please="sudo"
