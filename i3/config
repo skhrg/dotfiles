@@ -295,7 +295,7 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
-bindsym $mod+b exec firefox
+bindsym $mod+b exec firefox-x11
 bindsym $mod+n exec urxvt256c -e nnn
 bindsym $mod+c exec urxvt256c -e nnn /home/Disks/CASTLE
 
@@ -310,7 +310,7 @@ bindsym --release Shift+Print exec gnome-screenshot -a
 bindsym --release ctrl+Print exec gnome-screenshot -c
 bindsym --release ctrl+Shift+Print exec gnome-screenshot -c -a
 
-exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS Vertical.jpg'
+exec_always feh --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg'
 exec compton -f -b --vsync opengl-swc 
 exec nm-applet
 exec mpd
