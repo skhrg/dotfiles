@@ -23,7 +23,8 @@ export FILE="nnn"
 export BROWSER="firefox"
 
 # nnn
-export NNN_PLUG="':-_|urxvt256c"
+export NNN_PLUG="':-_|urxvt256c;i:_sxiv -t .*"
+export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4 - Senior'
 
 # User specific aliases and functions
 alias please="sudo"
