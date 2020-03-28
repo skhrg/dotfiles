@@ -30,7 +30,10 @@ export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Document
 alias please="sudo"
 alias install="sudo dnf install"
 alias update="sudo dnf update && flatpak update"
+
 alias dd="sudo dd status='progress'"
+alias q="exit"
+
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 alias pubcp='function _pubcp(){ cp  --no-preserve=mode $1 /home/Disks/TOWER/; };_pubcp'
 
