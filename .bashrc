@@ -6,9 +6,9 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 export PATH
 
@@ -22,6 +22,23 @@ export READER="okular"
 export FILE="nnn"
 export BROWSER="firefox"
 
+# ~ Cleanup
+export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
+export GEM_HOME="$XDG_DATA_HOME"/gem
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle 
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export MATHEMATICA_USERBASE="$XDG_CONFIG_HOME"/mathematica
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export PYLINTHOME="$XDG_CACHE_HOME"/pylint
+export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+
 # nnn
 export NNN_PLUG="':-_|urxvt256c;i:_sxiv -t .*"
 export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4 - Senior'
@@ -30,9 +47,10 @@ export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Document
 alias please="sudo"
 alias install="sudo dnf install"
 alias update="sudo dnf update && flatpak update"
+alias q="exit"
 
 alias dd="sudo dd status='progress'"
-alias q="exit"
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 alias pubcp='function _pubcp(){ cp  --no-preserve=mode $1 /home/Disks/TOWER/; };_pubcp'
@@ -44,8 +62,6 @@ alias brc="vim ~/.bashrc"
 alias omar="ssh -XC omar.pha.jhu.edu"
 alias kima="ssh -XC kima.pha.jhu.edu"
 alias avon="ssh -XC avon.pha.jhu.edu"
-
-alias square='/home/lordskh/Documents/Projects/Misc.\ Scripts/square.sh'
 
 alias gs='git status'
 alias ga='git add'
