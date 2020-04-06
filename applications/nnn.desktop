@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=nnn
+Exec=urxvt256c-ml -e nnn
+Icon=exec
+NoDisplay=false

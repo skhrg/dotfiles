@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=vim
+Exec=urxvt256c-ml -e vim
+Icon=exec
+NoDisplay=false
