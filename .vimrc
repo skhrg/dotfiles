@@ -13,7 +13,6 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 let g:gruvbox_italic=1
-let g:airline_theme='solarized'
 
 " Enable filetype stuff
 filetype on
@@ -60,6 +59,8 @@ set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:airline_powerline_fonts=1
+let g:Powerline_symbols='unicode'
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
@@ -80,6 +81,10 @@ let NERDTreeShowHidden=1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
+
+" Tagbar
+nmap <C-j> :TagbarToggle<CR>
+imap <C-j> <C-o><C-j>
 
 " Splits
 set splitbelow
