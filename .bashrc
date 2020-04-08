@@ -50,7 +50,7 @@ alias update="sudo dnf update && flatpak update"
 alias q="exit"
 
 alias dd="sudo dd status='progress'"
-alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 alias pubcp='function _pubcp(){ cp  --no-preserve=mode $1 /home/Disks/TOWER/; };_pubcp'
@@ -84,12 +84,19 @@ alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags 
 # Gruvbox color correction
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
-#if [ -f `which powerline-daemon` ];
-#then
-#    powerline-daemon -q
-#    POWERLINE_BASH_CONTINUATION=1
-#    POWERLINE_BASH_SELECT=1
-#    . /usr/share/powerline/bash/powerline.sh
-#fi
+# Don't run things that can break non-interactive shells unless login is interactive
+if [[ $- == *i* ]];
+then
+    if [ -f `which powerline-daemon` ];
+    then
+        powerline-daemon -q
+        POWERLINE_BASH_CONTINUATION=1
+        POWERLINE_BASH_SELECT=1
+        . /usr/share/powerline/bash/powerline.sh
+    fi
 
-exec fish
+    if [ -f `which fish` ];
+    then
+        exec fish
+    fi
+fi
