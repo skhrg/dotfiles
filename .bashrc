@@ -41,7 +41,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 
 # nnn
 export NNN_PLUG="':-_|urxvt256c-ml;i:_sxiv -t .*"
-export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4 - Senior'
+export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4_-_Senior'
 
 # User specific aliases and functions
 alias please="sudo"
@@ -85,18 +85,20 @@ alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags 
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # Don't run things that can break non-interactive shells unless login is interactive
-if [[ $- == *i* ]];
+# Also don't run these on tty shells
+if [[ $- == *i* ]] && [ ! "$(tty | grep -c tty)" -ge 1 ];
 then
-    if [ -f `which powerline-daemon` ];
-    then
-        powerline-daemon -q
-        POWERLINE_BASH_CONTINUATION=1
-        POWERLINE_BASH_SELECT=1
-        . /usr/share/powerline/bash/powerline.sh
-    fi
 
     if [ -f `which fish` ];
     then
         exec fish
+    else
+        if [ -f `which powerline-daemon` ];
+        then
+            powerline-daemon -q
+            POWERLINE_BASH_CONTINUATION=1
+            POWERLINE_BASH_SELECT=1
+            . /usr/share/powerline/bash/powerline.sh
+        fi
     fi
 fi
