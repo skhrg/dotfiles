@@ -1,20 +1,29 @@
-!-------------------------------------------------
+! -----------------------------------------------------------------------------
+! Xft settings
+! -----------------------------------------------------------------------------
+Xft.dpi: 90
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+! -----------------------------------------------------------------------------
+
+! -----------------------------------------------------------------------------
 ! URxvt specific settings
 ! -----------------------------------------------------------------------------
 ! Perl extensions
 URxvt.perl-ext-common: default,matcher,resize-font,clipboard-osc,searchable-scrollback
 ! Set font
-URxvt*font: xft:Source Code Pro Medium:size=12
+URxvt*font: xft:Source Code Pro:size=12
 URxvt.letterSpace: -1
 ! Clicable URLs
 URxvt.url-launcher: /usr/bin/xdg-open
 gRxvt.matcher.button: 1
 ! Get rid of ugly scroll bar
 URxvt.scrollBar: false
-!! Transparance
-!URxvt.transparent:   true
-!URxvt.shading:       10
-! Fix slow redraw
+! Fix buffering
 URxvt*buffered: false
 ! -----------------------------------------------------------------------------
 
