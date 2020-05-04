@@ -236,7 +236,7 @@ bindsym $mod+F2 exec light -A 10
 bindsym $mod+F1 exec light -U 10 
 
 # Application shortcuts
-bindsym $mod+n exec urxvt25c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
+bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
 bindsym $mod+b exec firefox
 
 # Lock Screen
