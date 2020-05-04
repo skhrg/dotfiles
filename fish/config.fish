@@ -23,10 +23,13 @@ set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
 set -gx PYLINTHOME "$XDG_CACHE_HOME"/pylint
 set -gx LESSKEY "$XDG_CONFIG_HOME"/less/lesskey
 set -gx LESSHISTFILE "$XDG_CACHE_HOME"/less/history
+set -gx _JAVA_OPTIONS -Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+set -gx GOPATH "$XDG_DATA_HOME"/go
+set -gx IPYTHONDIR "$XDG_CONFIG_HOME"/ipython
 
 # nnn
 set -gx NNN_PLUG "':-_|urxvt256c-ml;i:_sxiv -t .*"
-set -gx NNN_BMS 'n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4 - Senior'
+set -gx NNN_BMS 'n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4_-_Senior'
 
 # powerline
 set -g theme_color_scheme gruvbox
@@ -39,6 +42,7 @@ alias q="exit"
 
 alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 function pubcp
@@ -63,10 +67,4 @@ alias gpp='git pull && git push'
 alias gpr='git pull --rebase'
 alias gprp='git pull --rebase && git pull'
 
-alias frecna='ffmpeg -f x11grab -y -r 30 -s 3000x1920 -i :1.0 ~/Videos/rec.mkv'
-alias lrecna='ffmpeg -f x11grab -y -r 30 -s 1920x1080 -i :1.0+0,521 ~/Videos/rec.mkv'
-alias rrecna='ffmpeg -f x11grab -y -r 30 -s 1080x1920 -i :1.0+1920,0 ~/Videos/rec.mkv'
-alias frec='ffmpeg -f x11grab -y -r 30 -s 3000x1920 -i :1.0 -f pulse -ac 2 -i rec.monitor ~/Videos/rec.mkv'
-alias lrec='ffmpeg -f x11grab -y -r 30 -s 1920x1080 -i :1.0+0,521 -f pulse -ac 2 -i rec.monitor ~/Videos/rec.mkv'
-alias rrec='ffmpeg -f x11grab -y -r 30 -s 1080x1920 -i :1.0+1920,0 -f pulse -ac 2 -i rec.monitor ~/Videos/rec.mkv'
 alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags nobuffer'

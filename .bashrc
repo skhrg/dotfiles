@@ -39,7 +39,8 @@ export PYLINTHOME="$XDG_CACHE_HOME"/pylint
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
-
+export GOPATH="$XDG_DATA_HOME"/go
+export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
 
 # nnn
 export NNN_PLUG="':-_|urxvt256c-ml;i:_sxiv -t .*"
@@ -53,6 +54,7 @@ alias q="exit"
 
 alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 alias pubcp='function _pubcp(){ cp  --no-preserve=mode $1 /home/Disks/TOWER/; };_pubcp'
