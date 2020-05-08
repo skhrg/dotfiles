@@ -258,7 +258,10 @@ default_border none
 bar {
     output $m1
     tray_output none
-    status_command i3status -c ~/.config/i3/i3status.conf
+    status_command bumblebee-status -t gruvbox-powerline \
+        -m load cpu memory disk:root disk:home disk:CASTLE network_traffic nic datetime \
+        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/home/Disks/CASTLE
+    #status_command i3status -c ~/.config/i3/i3status.conf
 	colors {
 		background $bg-color
 	    separator $text-color
@@ -273,7 +276,11 @@ bar {
 bar {
     output $m2
     tray_output $m2
-    status_command  while :; do date '+%b-%d %H:%M:%S'; done
+    #font xft:Source Code Pro
+    status_command bumblebee-status -t gruvbox-powerline \
+        -m mpd dnf pasource pasink weather datetime \
+        -p datetime.format='%b-%d %H:%M:%S'
+    # status_command  while :; do date '+%b-%d %H:%M:%S'; done
 	colors {
 		background $bg-color
 	    separator $text-color
@@ -285,12 +292,14 @@ bar {
 	}
 }
 
-bindsym XF86AudioRaiseVolume workspace next_on_output
-bindsym XF86AudioLowerVolume workspace prev_on_output
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5%
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+# Cycle workspaces
+bindsym $mod+Tab workspace next_on_output 
+bindsym $mod+Shift+Tab workspace prev_on_output
 
 # Media player controls
 bindsym XF86AudioPlay exec mpc toggle
@@ -314,6 +323,7 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg'
 exec compton -f -b --vsync opengl-swc 
 exec nm-applet
+exec blueman-applet
 exec mpd
 exec_always xrandr --dpi 90 --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x520 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
 exec xinput set-prop 8 297 .8
