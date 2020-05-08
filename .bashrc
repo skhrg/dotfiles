@@ -80,7 +80,36 @@ alias gprp='git pull --rebase && git pull'
 alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags nobuffer'
 
 # Gruvbox color correction
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ];
+then
+    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+fi
+
+# Fontawesome scripts
+if [ -f "$HOME/.fonts/devicons-regular.sh" ];
+then
+    source "$HOME/.fonts/devicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/fontawesome-regular.sh" ];
+then
+    source "$HOME/.fonts/fontawesome-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/octicons-regular.sh" ];
+then
+    source "$HOME/.fonts/octicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/pomicons-regular.sh" ];
+then
+    source "$HOME/.fonts/pomicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/programming-regular.sh" ];
+then
+    source "$HOME/.fonts/devicons-regular.sh"
+fi
 
 # Don't run things that can break non-interactive shells unless login is interactive
 # Also don't run these on tty shells
@@ -100,3 +129,5 @@ then
         fi
     fi
 fi
+
+
