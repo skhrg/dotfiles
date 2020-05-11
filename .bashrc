@@ -82,7 +82,7 @@ alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags 
 # Gruvbox color correction
 if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ];
 then
-    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" &> \dev\bill
 fi
 
 # Fontawesome scripts
@@ -114,20 +114,19 @@ fi
 # Don't run things that can break non-interactive shells unless login is interactive
 # Also don't run these on tty shells
 if [[ $- == *i* ]] && [ ! "$(tty | grep -c tty)" -ge 1 ];
-then
-
-    if [ -f `which fish` ];
+then 
+    if [ -x "$(command -v fish)" ];
     then
         exec fish
     else
-        if [ -f `which powerline-daemon` ];
+        if [ -x "$(command -v powerline-daemon)" ];
         then
             powerline-daemon -q
             POWERLINE_BASH_CONTINUATION=1
             POWERLINE_BASH_SELECT=1
             . /usr/share/powerline/bash/powerline.sh
         fi
-    fi
+   fi
 fi
 
 
