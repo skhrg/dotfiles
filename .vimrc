@@ -86,6 +86,15 @@ let g:NERDCommentEmptyLines = 1
 nmap <C-j> :TagbarToggle<CR>
 imap <C-j> <C-o><C-j>
 
+" Closing and saving
+nmap <C-s> :w<CR>
+nmap <C-d> :q<CR>
+nmap <C-e> :qa<CR>
+
+imap <C-s> <C-o><C-s>
+imap <C-d> <C-o><C-d>
+imap <C-e> <C-o><C-e>
+
 " Splits
 set splitbelow
 set splitright
@@ -145,8 +154,6 @@ nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 nmap <C-]> :+tabmove<CR>
 nmap <C-[> :-tabmove<CR>
-nmap <C-d> :w<CR>
-nmap <C-e> :q<CR>
 
 imap <C-t> <C-o><C-t>
 imap <C-w> <C-o><C-w>
