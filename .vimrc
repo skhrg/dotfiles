@@ -87,11 +87,9 @@ nmap <C-j> :TagbarToggle<CR>
 imap <C-j> <C-o><C-j>
 
 " Closing and saving
-nmap <C-s> :w<CR>
-nmap <C-d> :q<CR>
-nmap <C-e> :qa<CR>
+nmap <C-d> :w<CR>
+nmap <C-e> :q<CR>
 
-imap <C-s> <C-o><C-s>
 imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
 
