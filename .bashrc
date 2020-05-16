@@ -82,7 +82,7 @@ alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags 
 # Gruvbox color correction
 if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ];
 then
-    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" &> \dev\bill
+    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 fi
 
 # Fontawesome scripts
@@ -128,5 +128,3 @@ then
         fi
    fi
 fi
-
-
