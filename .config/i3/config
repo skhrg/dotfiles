@@ -279,7 +279,7 @@ bar {
     #font xft:Source Code Pro
     status_command bumblebee-status -t gruvbox-powerline \
         -m mpd dnf pasource pasink weather datetime \
-        -p datetime.format='%b-%d %H:%M:%S'
+        -p datetime.format='%b-%d %H:%M:%S' weather.left-click="urxvt256c-ml -e bash -c 'curl wttr.in/?m && fish'"
     # status_command  while :; do date '+%b-%d %H:%M:%S'; done
 	colors {
 		background $bg-color
@@ -325,5 +325,7 @@ exec compton -f -b --vsync opengl-swc
 exec nm-applet
 exec blueman-applet
 exec mpd
+exec protonmail-bridge
+exec redshift
 exec_always xrandr --dpi 90 --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x520 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
 exec xinput set-prop 8 297 .8
