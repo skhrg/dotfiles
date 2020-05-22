@@ -3,7 +3,7 @@
 # Default programs:
 set -gx EDITOR "vim"
 set -gx TERMINAL "urxvt256c-ml"
-set -gx READER "okular"
+set -gx READER "zathura"
 set -gx FILE "nnn"
 set -gx BROWSER "firefox"
 

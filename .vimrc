@@ -180,7 +180,7 @@ autocmd FileType tex set complete+=kspell
 " PDF production stuff
 command PDFtex Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
-command PDFview Silent exec "!okular '%:r.pdf' &"
+command PDFview Silent exec "!zathura '%:r.pdf' &"
 command PDFbeamer Silent exec "!pandoc -t beamer % -o %:r.pdf &"
 
 nmap <C-p> :w<bar>:PDF<CR>

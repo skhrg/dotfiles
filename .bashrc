@@ -18,7 +18,7 @@ export PATH
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="urxvt256c-ml"
-export READER="okular"
+export READER="zathura"
 export FILE="nnn"
 export BROWSER="firefox"
 
