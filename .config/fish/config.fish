@@ -28,7 +28,7 @@ set -gx GOPATH "$XDG_DATA_HOME"/go
 set -gx IPYTHONDIR "$XDG_CONFIG_HOME"/ipython
 
 # nnn
-set -gx NNN_PLUG "':-_|urxvt256c-ml;i:_sxiv -t .*"
+set -gx NNN_PLUG '.:-_|urxvt256c-ml;i:_sxiv -t .*;z:_|zathura $nnn*'
 set -gx NNN_BMS 'n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4_-_Senior'
 
 # powerline
@@ -45,9 +45,6 @@ alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
-function pubcp
-    cp  --no-preserve=mode $argv /home/Disks/TOWER/
-end
 
 alias i3c="vim ~/.config/i3/config"
 alias vrc="vim ~/.vimrc"
