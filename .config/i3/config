@@ -260,7 +260,7 @@ bar {
     tray_output none
     status_command bumblebee-status -t gruvbox-powerline \
         -m load cpu memory disk:root disk:home disk:CASTLE network_traffic nic datetime \
-        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/home/Disks/CASTLE
+        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/mnt/CASTLE
     #status_command i3status -c ~/.config/i3/i3status.conf
 	colors {
 		background $bg-color
@@ -308,7 +308,7 @@ bindsym XF86AudioPrev exec mpc prev
 
 bindsym $mod+b exec firefox-x11
 bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
-bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn /home/Disks/CASTLE
+bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn /mnt/CASTLE
 
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
 # move focused workspace between monitors
