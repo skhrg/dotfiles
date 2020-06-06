@@ -78,12 +78,6 @@ alias gprp='git pull --rebase && git pull'
 
 alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags nobuffer'
 
-# Gruvbox color correction
-if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ];
-then
-    source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
-fi
-
 # Fontawesome scripts
 if [ -f "$HOME/.fonts/devicons-regular.sh" ];
 then
@@ -114,6 +108,12 @@ fi
 # Also don't run these on tty shells
 if [[ $- == *i* ]] && [ ! "$(tty | grep -c tty)" -ge 1 ];
 then 
+    # Gruvbox color correction
+    if [ -f "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh" ];
+    then
+        source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+    fi
+
     if [ -x "$(command -v fish)" ];
     then
         exec fish
