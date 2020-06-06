@@ -1,0 +1,10 @@
+# vim: filetype=neomuttrc
+# muttrc file for account proton
+set from = "haridas@sas.upenn.edu"
+set sendmail = "msmtp -a upenn"
+alias me Saianeesh <haridas@sas.upenn.edu>
+
+set crypt_autosign = yes
+set crypt_opportunistic_encrypt = yes
+set pgp_self_encrypt = no
+set pgp_default_key  = DE8479F0589A2F4F 
