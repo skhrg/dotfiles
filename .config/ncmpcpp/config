@@ -1,6 +1,6 @@
-ncmpcpp_directory = "/home/lordskh/.local/state/ncmpcpp"
+ncmpcpp_directory = "~/.local/state/ncmpcpp"
 
-lyrics_directory = "/home/lordskh/.local/state/ncmpcpp/lyrics"
+lyrics_directory = "~/.local/state/ncmpcpp/lyrics"
 
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
