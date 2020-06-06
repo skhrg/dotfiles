@@ -1,0 +1,53 @@
+IMAPStore proton-remote
+Host 127.0.0.1
+Port 1143
+User saianeesh@protonmail.com
+PassCmd "pass mutt-wizard-proton"
+AuthMechs LOGIN
+SSLType None
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore proton-local
+Subfolders Verbatim
+Path ~/.local/share/mail/proton/
+Inbox ~/.local/share/mail/proton/INBOX
+Flatten .
+
+Channel proton
+Expunge Both
+Master :proton-remote:
+Slave :proton-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore jhu-remote
+Host outlook.office365.com
+Port 993
+User sharida2@jh.edu
+PassCmd "pass mutt-wizard-jhu"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+PipelineDepth 1
+
+MaildirStore jhu-local
+Subfolders Verbatim
+Path ~/.local/share/mail/jhu/
+Inbox ~/.local/share/mail/jhu/INBOX
+Flatten .
+
+Channel jhu
+Expunge Both
+Master :jhu-remote:
+Slave :jhu-local:
+Patterns * !"[Gmail]/All Mail" !Calendar* !Notes !Clutter !Contacts !"Conversation History" !Journal !Tasks 
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
