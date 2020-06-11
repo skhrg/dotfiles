@@ -44,7 +44,7 @@ Channel jhu
 Expunge Both
 Master :jhu-remote:
 Slave :jhu-local:
-Patterns * !"[Gmail]/All Mail" !Calendar* !Notes !Clutter !Contacts !"Conversation History" !Journal !Tasks 
+Patterns * !"[Gmail]/All Mail" !Calendar* !Notes !Clutter !Contacts !"Conversation History" !Journal !Tasks !Outbox !Scheduled" 
 Create Both
 SyncState *
 MaxMessages 0
