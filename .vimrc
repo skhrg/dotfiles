@@ -4,14 +4,19 @@ set history=50
 set ruler
 let mapleader = " "
 set t_BE=
+set t_RV=
+set t_RB=
+set t_RF=
+set t_u7=
 
 " Use pathogen
 execute pathogen#infect()
 
 " Colors
+set t_Co=256
+colorscheme gruvbox
 syntax enable
 set background=dark
-colorscheme gruvbox
 let g:gruvbox_italic=1
 
 " Enable filetype stuff
