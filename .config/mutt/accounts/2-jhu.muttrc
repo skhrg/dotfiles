@@ -1,7 +1,7 @@
 # vim: filetype=neomuttrc
 # muttrc file for account jhu
 set realname = "Saianeesh Keshav Haridas"
-set from = "sharida2@jhu.edu"
+set from = "sharida2@alumni.jh.edu"
 set sendmail = "msmtp -a jhu"
 alias me Saianeesh Keshav Haridas <sharida2@jhu.edu>
 set folder = "/home/lordskh/.local/share/mail/jhu"
