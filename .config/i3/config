@@ -94,6 +94,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+set $ws0 "0"
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -115,10 +116,12 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
-set $m1 HDMI-0
-set $m2 DVI-D-0
+set $m0 DVI-I-1
+set $m1 DVI-D-0
+set $m2 HDMI-0
 
 # set workspace default monitors
+workspace $ws0 output $m0
 workspace $ws1 output $m1 
 workspace $ws2 output $m1 
 workspace $ws3 output $m1 
@@ -141,6 +144,7 @@ workspace $ws19 output $m2
 workspace $ws20 output $m2 
 
 # switch to workspace
+bindsym $mod+grave workspace $ws0
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -173,6 +177,7 @@ bindcode $mod+Mod2+81 workspace $ws19
 bindcode $mod+Mod2+90 workspace $ws20
 
 # move focused container to workspace
+bindsym $mod+Shift+grave move container to workspace $ws0
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -320,12 +325,12 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
-exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg'
-exec compton -f -b --vsync opengl-swc 
+exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/LOGH.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' 
+exec compton -b --vsync opengl-swc 
 exec nm-applet
 exec blueman-applet
 exec mpd
 exec protonmail-bridge
 exec redshift
-exec_always xrandr --dpi 90 --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --mode 1920x1080 --pos 0x520 --rotate normal --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x0 --rotate right
+exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x202 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x599 --rotate normal
 exec xinput set-prop 8 297 .8
