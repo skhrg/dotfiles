@@ -12,7 +12,12 @@ set mbox_type = Maildir
 alternates ^skh@saianeesh.com ^saianeesh@protonmail.com ^upenn@saianeesh.com ^accounts@saianeesh.com ^haridas@sas.upenn.edu
 
 # Send from UPenn account
-macro index,compose zu "<enter-command>set from='haridas@sas.upenn.edu'<enter><enter-command>set sendmail='msmtp -a upenn'<enter>"
+send-hook '~f ^haridas@sas\.upenn\.edu$' source ~/.config/mutt/accounts/1-upenn.muttrc
+macro index,compose zu "<enter-command>source ~/.config/mutt/accounts/1-upenn.muttrc<enter>"
+
+# Make sure to switch back from UPenn correctly
+send-hook '~f .saianeesh.' source ~/.config/mutt/accounts/1-proton.muttrc
+macro index,compose zp "<enter-command>source ~/.config/mutt/accounts/1-proton.muttrc<enter>"
 
 set pgp_default_key=D8B1264E8D840EB8A0AA63726F7A337BCC9B4C32
 unset crypt_autosign
