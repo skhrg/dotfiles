@@ -9,10 +9,13 @@ set header_cache = /home/lordskh/.cache/mutt-wizard/jhu/headers
 set message_cachedir = /home/lordskh/.cache/mutt-wizard/jhu/bodies
 set mbox_type = Maildir
 
-set crypt_autosign = yes
-set crypt_opportunistic_encrypt = no
-set pgp_self_encrypt = no 
-set pgp_default_key  = 99EDE6F27F4B6524
+set pgp_default_key=24DB97AB053E41925259D9C399EDE6F27F4B6524
+set crypt_autosign
+set crypt_opportunistic_encrypt
+set crypt_replysign
+set crypt_replysignencrypted
+set crypt_replyencrypt
+set postpone_encrypt
 
 bind index,pager gg noop
 bind index,pager g noop

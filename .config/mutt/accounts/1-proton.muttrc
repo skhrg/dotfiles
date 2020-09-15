@@ -14,10 +14,13 @@ alternates ^skh@saianeesh.com ^saianeesh@protonmail.com ^upenn@saianeesh.com ^ac
 # Send from UPenn account
 macro index,compose zu "<enter-command>set from='haridas@sas.upenn.edu'<enter><enter-command>set sendmail='msmtp -a upenn'<enter>"
 
-# set crypt_autosign = yes
-# set crypt_opportunistic_encrypt = yes
-# set pgp_self_encrypt = yes
-# set pgp_default_key  = 6F7A337BCC9B4C322BA7D4B4D0EBFDDF
+set pgp_default_key=D8B1264E8D840EB8A0AA63726F7A337BCC9B4C32
+unset crypt_autosign
+unset crypt_opportunistic_encrypt
+set crypt_replysign
+set crypt_replysignencrypted
+unset crypt_replyencrypt
+unset postpone_encrypt
 
 bind index,pager gg noop
 bind index,pager g noop
