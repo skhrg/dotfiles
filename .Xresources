@@ -21,7 +21,7 @@ URxvt*font: xft:Source Code Pro:size=12
 URxvt.letterSpace: -1
 ! Clicable URLs
 URxvt.url-launcher: /usr/bin/xdg-open
-gRxvt.matcher.button: 1
+URxvt.matcher.button: 1
 ! Get rid of ugly scroll bar
 URxvt.scrollBar: false
 ! Fix buffering
