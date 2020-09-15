@@ -181,6 +181,8 @@ autocmd FileType text setlocal spell
 autocmd FileType text set complete+=kspell
 autocmd FileType tex setlocal spell
 autocmd FileType tex set complete+=kspell
+autocmd FileType mail setlocal spell
+autocmd FileType mail set complete+=kspell
 
 " PDF production stuff
 command PDFtex Silent call Tex_CompileLatex()
