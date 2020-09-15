@@ -10,8 +10,9 @@ set pgp_use_gpg_agent
 set wait_key=no
 
 source ~/.config/mutt/accounts/1-proton.muttrc
+folder-hook .Sent.* "push <tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"
+folder-hook .proton.UPenn.* source ~/.config/mutt/accounts/1-upenn.muttrc 
 folder-hook .proton. source ~/.config/mutt/accounts/1-proton.muttrc
-folder-hook .proton.UPenn. source ~/.config/mutt/accounts/1-upenn.muttrc 
 folder-hook .jhu. source ~/.config/mutt/accounts/2-jhu.muttrc 
 
 bind index,pager \CJ sidebar-next
