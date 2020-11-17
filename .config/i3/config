@@ -267,7 +267,7 @@ bar {
     tray_output none
     status_command bumblebee-status -t gruvbox-powerline \
         -m load cpu memory disk:root disk:home disk:CASTLE network_traffic nic datetime \
-        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/mnt/CASTLE
+        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/mnt/CASTLE nic.exclude=vmnet1,vmnet2,vmnet8,virbr0,virbr0-nic,lo
     #status_command i3status -c ~/.config/i3/i3status.conf
 	colors {
 		background $bg-color
@@ -334,5 +334,5 @@ exec blueman-applet
 exec mpd
 exec protonmail-bridge
 exec redshift
-exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --mode 1920x1080 --pos 0x202 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x599 --rotate normal
 exec xinput set-prop 8 297 .8
+exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x523 --rotate normal
