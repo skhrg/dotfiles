@@ -196,3 +196,16 @@ autocmd BufRead,BufNewFile *.bmd nmap <C-p> :w<bar>:PDFbeamer<CR>
 autocmd BufRead,BufNewFile *.bmd set filetype=markdown
 imap <C-p> <C-o><C-p>
 nmap <leader><C-p> :PDFview<CR>
+
+" Coc.vim stuff
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
