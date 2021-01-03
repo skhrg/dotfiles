@@ -12,15 +12,14 @@ then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="urxvt256c-ml"
 export READER="zathura"
 export FILE="nnn"
 export BROWSER="firefox"
+export SYSTEMD_PAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # ~ Cleanup
 export XDG_CONFIG_HOME=~/.config
@@ -56,6 +55,7 @@ alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 alias mail="printf '\033]0;Mail\007' && neomutt"
+alias cat="bat"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 
