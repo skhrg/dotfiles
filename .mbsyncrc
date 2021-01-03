@@ -17,7 +17,7 @@ Channel proton
 Expunge Both
 Master :proton-remote:
 Slave :proton-local:
-Patterns * !"[Gmail]/All Mail"
+Patterns * !"All Mail"
 Create Both
 SyncState *
 MaxMessages 0
