@@ -114,17 +114,11 @@ then
     then
         source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
     fi
-
-    if [ -x "$(command -v fish)" ];
+    if [ -x "$(command -v powerline-daemon)" ];
     then
-        exec fish
-    else
-        if [ -x "$(command -v powerline-daemon)" ];
-        then
-            powerline-daemon -q
-            POWERLINE_BASH_CONTINUATION=1
-            POWERLINE_BASH_SELECT=1
-            . /usr/share/powerline/bash/powerline.sh
-        fi
-   fi
+        powerline-daemon -q
+        POWERLINE_BASH_CONTINUATION=1
+        POWERLINE_BASH_SELECT=1
+        . /usr/share/powerline/bash/powerline.sh
+    fi
 fi
