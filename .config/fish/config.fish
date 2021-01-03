@@ -44,6 +44,7 @@ alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 alias mail="printf '\033]0;Mail\007' && neomutt"
+alias cat="bat"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 

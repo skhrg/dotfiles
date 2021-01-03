@@ -40,6 +40,10 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export GOPATH="$XDG_DATA_HOME"/go
 export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
+export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 
 # nnn
 export NNN_PLUG='.:-_|urxvt256c-ml;i:_sxiv -t .*;z:_|zathura $nnn*'
@@ -56,6 +60,7 @@ alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 alias mail="printf '\033]0;Mail\007' && neomutt"
 alias cat="bat"
+alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 
