@@ -18,6 +18,9 @@
 			},
 			{
 				"function": "powerline.segments.shell.cwd",
+				"args" : {
+				    "dir_shorten_len" : 2
+                },
 				"priority": 10
 			},
 			{
