@@ -1,3 +1,10 @@
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+export PATH
+
 # Oh My Zsh stuff
 export ZSH="/home/lordskh/.oh-my-zsh"
 
