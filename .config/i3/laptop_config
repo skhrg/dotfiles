@@ -255,7 +255,10 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 
 # Run at startup
 exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/LOGH.jpg' 
-exec xinput set-prop 8 275 .4
+exec compton -b -o 0 --vsync opengl-swc
 exec nm-applet
+exec blueman-applet
 exec mate-power-manager
+exec redshift
 exec dunst
+exec xinput --set-prop 10 277 .4

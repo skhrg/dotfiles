@@ -327,11 +327,12 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
-exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/LOGH.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' 
+# Run at startup
+exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/Sky.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS_Vertical.jpg' '/home/lordskh/Documents/Pictures/Wallpapers/CLASS.jpg' 
 exec compton -b -o 0 --vsync opengl-swc 
 exec nm-applet
 exec blueman-applet
 exec mpd
 exec redshift
-exec xinput set-prop 8 297 .8
+exec dunst
 exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x523 --rotate normal
