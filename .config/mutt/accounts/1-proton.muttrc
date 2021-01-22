@@ -20,10 +20,10 @@ alternates ^skh@saianeesh.com ^saianeesh@protonmail.com ^accounts@saianeesh.com
 # macro index,compose zp "<enter-command>source ~/.config/mutt/accounts/1-proton.muttrc<enter>"
 
 set pgp_default_key=D8B1264E8D840EB8A0AA63726F7A337BCC9B4C32
-unset crypt_autosign
+set crypt_autosign
 unset crypt_opportunistic_encrypt
 set crypt_replysign
-set crypt_replysignencrypted
+unset crypt_replysignencrypted
 unset crypt_replyencrypt
 unset postpone_encrypt
 
