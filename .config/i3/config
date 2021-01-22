@@ -125,8 +125,8 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
-set $m0 DVI-I-1
-set $m1 DVI-D-0
+set $m0 DVI-D-0
+set $m1 DVI-I-1
 set $m2 HDMI-0
 
 # set workspace default monitors
@@ -382,4 +382,4 @@ exec blueman-applet
 exec mpd
 exec redshift
 exec dunst
-exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 1920x523 --rotate normal
+exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 1920x501 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 0x0 --rotate normal
