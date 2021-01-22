@@ -16,6 +16,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Turn off terminal bell
+unsetopt BEEP
+
 # Default programs:
 export EDITOR="vim"
 export TERMINAL="urxvt256c-ml"
