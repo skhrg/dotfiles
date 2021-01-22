@@ -6,7 +6,7 @@ logfile	~/.local/state/msmtp/msmtp.log
 
 account proton
 tls_trust_file
-tls_fingerprint A3:BA:94:F6:59:A2:D9:83:E5:BD:D1:64:F8:17:7B:9C:9B:5D:CF:F0:22:57:46:91:B4:98:08:54:C8:BE:17:7E
+tls_fingerprint 9C:D5:5C:51:74:79:BB:73:AD:D8:6E:AC:A6:CE:50:8A:3A:EB:26:77:91:95:86:EA:CA:46:B0:80:1A:18:EF:8F 
 host 127.0.0.1
 port 1025
 from skh@saianeesh.com
