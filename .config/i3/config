@@ -360,14 +360,20 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
+# Application shortcuts
 bindsym $mod+b exec firefox-x11
 bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
 bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn /mnt/CASTLE
 
+# Lock screen
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
 # move focused workspace between monitors
 bindsym $mod+greater move workspace to output right
 bindsym $mod+less move workspace to output left
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
 # Screenshots
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # All screens
