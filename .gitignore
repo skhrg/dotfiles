@@ -1,2 +1,4 @@
 *mailsynclastrun
 .config/coc/
+.ssh/known_hosts
+.config/mpv/watch_later/
