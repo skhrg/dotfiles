@@ -94,9 +94,11 @@ imap <C-j> <C-o><C-j>
 " Closing and saving
 nmap <C-d> :w<CR>
 nmap <C-e> :q<CR>
+nmap <C-w> :bd<CR>
 
 imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
+imap <C-w> <C-o><C-w>
 
 " Splits
 set splitbelow
@@ -152,7 +154,7 @@ nmap <leader><C-w> :lclose<CR>
 
 " Tabs
 nmap <C-t> :tabnew<CR>
-nmap <C-w> :tabclose<CR>
+"nmap <C-w> :tabclose<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 nmap <C-]> :+tabmove<CR>
