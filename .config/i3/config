@@ -139,7 +139,7 @@ workspace $wsF6 output $m0
 workspace $wsF7 output $m0 
 workspace $wsF8 output $m0 
 workspace $wsF9 output $m0 
-workspace $wsF10 output $m10 
+workspace $wsF10 output $m0 
 workspace $ws1 output $m1 
 workspace $ws2 output $m1 
 workspace $ws3 output $m1 
