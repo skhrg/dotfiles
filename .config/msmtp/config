@@ -19,7 +19,8 @@ host smtp.office365.com
 port 587
 from sharida2@jhu.edu
 user sharida2@alumni.jh.edu
-passwordeval "pass mutt-wizard-jhu"
+auth oauthbearer
+passwordeval "oauth2ms"
 
 account upenn
 host smtp.gmail.com
