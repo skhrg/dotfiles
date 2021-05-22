@@ -53,7 +53,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 
 # nnn
-export NNN_PLUG='.:-_|urxvt256c-ml;i:_sxiv -t .*;z:_|zathura $nnn*'
+export NNN_PLUG='x:xdgdefault;f:fzcd;m:nmount;p:preview-tui;.:-_|urxvt256c-ml;i:_sxiv -t .*;z:_|zathura $nnn*'
 export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4_-_Senior'
 
 # User specific aliases and functions
@@ -64,8 +64,9 @@ alias q="exit"
 
 alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+alias nnn="i3-msg -q 'split h' && nnn -a"
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
-alias mail="printf '\033]0;Mail\007' && neomutt"
+alias mutt="printf '\033]0;Mail\007' && neomutt"
 alias cat="bat"
 alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
 
@@ -134,3 +135,6 @@ then
         . /usr/share/powerline/zsh/powerline.zsh
     fi
 fi
+
+# opam configuration
+test -r /home/lordskh/.opam/opam-init/init.zsh && . /home/lordskh/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
