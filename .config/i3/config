@@ -362,8 +362,8 @@ bindsym XF86AudioPrev exec mpc prev
 
 # Application shortcuts
 bindsym $mod+b exec firefox-x11
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
-bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn /mnt/CASTLE
+bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e ~/.local/bin/nwrap
+bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e ~/.local/bin/nwrap /mnt/CASTLE
 
 # Lock screen
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 

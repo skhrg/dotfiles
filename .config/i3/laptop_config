@@ -234,7 +234,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Application shortcuts
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e nnn
+bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e ~/.local/bin/nwrap
 bindsym $mod+b exec firefox
 
 # Lock Screen
