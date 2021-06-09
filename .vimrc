@@ -8,6 +8,8 @@ set t_RV=
 set t_RB=
 set t_RF=
 set t_u7=
+set t_fd=
+set t_fe=
 
 " Use pathogen
 execute pathogen#infect()
