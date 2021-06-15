@@ -45,10 +45,16 @@ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export ANDROID_PREFS_ROOT="$XDG_CONFIG_HOME"/android
 
-# nnn
-#export NNN_PLUG='x:xdgdefault;f:fzcd;m:nmount;p:preview-tui;.:-_|urxvt256c-ml;i:_sxiv -t .*;z:_|zathura $nnn*'
-#export NNN_BMS='n:~/Documents/Notes;d:~/Documents/Projects/dotfiles;p:~/Documents/Projects/personal-site;c:~/Documents/Undergrad/CLASS;s:~/Documents/Undergrad/Courses/4_-_Senior'
-#
+if [ -d "$GOPATH/bin" ];
+then
+    export PATH="$GOPATH/bin:$PATH"
+fi
+
+if [ -d "$HOME/.cargo/bin" ];
+then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # User specific aliases and functions
 alias please="sudo"
 alias install="sudo dnf install"
