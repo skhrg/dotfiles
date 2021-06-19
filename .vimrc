@@ -74,6 +74,7 @@ endif
 
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.colnr = '℅'
  
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
