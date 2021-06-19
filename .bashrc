@@ -61,12 +61,20 @@ alias install="sudo dnf install"
 alias update="sudo dnf update && flatpak update"
 alias q="exit"
 
+if [ -x "$(command -v exa)" ];
+then
+    alias ls="exa"
+    alias ll="exa -l"
+fi
 alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
 #alias nnn="nwrap"
 alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
 alias mutt="printf '\033]0;Mail\007' && neomutt"
-alias cat="bat"
+if [ -x "$(command -v bat)" ];
+then
+    alias cat="bat"
+fi
 alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
