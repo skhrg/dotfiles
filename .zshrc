@@ -154,7 +154,7 @@ then
         powerline-daemon -q
         POWERLINE_BASH_CONTINUATION=1
         POWERLINE_BASH_SELECT=1
-        . $POWERLINEDIR/bash/powerline.sh
+        . $POWERLINEDIR/zsh/powerline.zsh
     fi
 fi
 
