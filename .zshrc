@@ -83,6 +83,7 @@ then
     alias cat="bat"
 fi
 alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
+alias tmux="tmux -2"
 
 alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
 
