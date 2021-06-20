@@ -137,9 +137,16 @@ then
     fi
     if [ -x "$(command -v powerline-daemon)" ];
     then
+        if [ -d "/usr/share/powerline" ];
+        then
+            export POWERLINEDIR="/usr/share/powerline"
+        elif [ -d "$HOME/.local/lib/python3.7/site-packages/powerline/bindings" ];
+        then
+            export POWERLINEDIR="$HOME/.local/lib/python3.7/site-packages/powerline/bindings"
+        fi
         powerline-daemon -q
         POWERLINE_BASH_CONTINUATION=1
         POWERLINE_BASH_SELECT=1
-        . /usr/share/powerline/bash/powerline.sh
+        . $POWERLINEDIR/bash/powerline.sh
     fi
 fi
