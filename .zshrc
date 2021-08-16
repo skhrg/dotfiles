@@ -158,5 +158,12 @@ then
     fi
 fi
 
+# zoxide setup
+if [ -x "$(command -v zoxide)" ];
+then
+    eval "$(zoxide init zsh)"
+    alias cd=z
+fi
+
 # opam configuration
 test -r /home/lordskh/.opam/opam-init/init.zsh && . /home/lordskh/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
