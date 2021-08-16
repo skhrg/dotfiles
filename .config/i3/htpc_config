@@ -255,10 +255,10 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 # Run at startup
-exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/Nazgul.jpg' 
+exec_always feh --no-fehbg --bg-fill '/home/lordskh/Pictures/Wallpapers/Nazgul.jpg' 
 exec compton -b -o 0 --vsync opengl-swc
 exec redshift
 exec dunst
 exec mpd
 exec sshfs emperor:/mnt/CASTLE /mnt/CASTLE -C
-exec xrandr --output HDMI-A-0 --primary --mode 3840x2160 --rate 30 --pos 0x0 --rotate normal --scale .5x.5
+exec xrandr --output HDMI-A-0 --mode 3840x2160 --rate 60 --pos 0x0 --rotate normal --scale .5x.5
