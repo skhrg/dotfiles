@@ -27,6 +27,7 @@ export FILE="nnn"
 export BROWSER="firefox"
 export SYSTEMD_PAGER="sh -c 'col -bx | bat -l man -p'"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # ~ Cleanup
 export XDG_CONFIG_HOME=~/.config
@@ -147,9 +148,9 @@ then
         if [ -d "/usr/share/powerline" ];
         then
             export POWERLINEDIR="/usr/share/powerline"
-        elif [ -d "$HOME/.local/lib/python3.7/site-packages/powerline/bindings" ];
+        elif [ -d "`python -m site --user-site`/powerline/bindings" ];
         then
-            export POWERLINEDIR="$HOME/.local/lib/python3.7/site-packages/powerline/bindings"
+            export POWERLINEDIR="`python -m site --user-site`/powerline/bindings"
         fi
         powerline-daemon -q
         POWERLINE_BASH_CONTINUATION=1
