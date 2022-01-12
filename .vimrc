@@ -129,6 +129,9 @@ imap <C-d> <C-o><C-d>
 imap <C-e> <C-o><C-e>
 imap <C-w> <C-o><C-w>
 
+" Insert single char
+nmap s i_<C-c>r
+
 " Splits
 set splitbelow
 set splitright
