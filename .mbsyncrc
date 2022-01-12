@@ -15,8 +15,8 @@ Flatten .
 
 Channel proton
 Expunge Both
-Master :proton-remote:
-Slave :proton-local:
+Far :proton-remote:
+Near :proton-local:
 Patterns * !"All Mail"
 Create Both
 SyncState *
@@ -43,8 +43,8 @@ Flatten .
 
 Channel jhu
 Expunge Both
-Master :jhu-remote:
-Slave :jhu-local:
+Far :jhu-remote:
+Near :jhu-local:
 Patterns * !"[Gmail]/All Mail" !Calendar* !Notes !Clutter !Contacts !"Conversation History" !Journal !Tasks !Outbox !Scheduled 
 Create Both
 SyncState *
