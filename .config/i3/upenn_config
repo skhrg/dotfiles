@@ -300,7 +300,7 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 # Application shortcuts
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e ~/.local/bin/nwrap 
+bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=16' -e ~/.local/bin/nwrap 
 bindsym $mod+b exec firefox
 
 # Lock Screen
