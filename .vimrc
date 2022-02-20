@@ -142,8 +142,8 @@ imap <Right> <C-c><Right>
 set splitbelow
 set splitright
 
-nmap <silent> <Esc>v :sp<CR>
-nmap <silent> <Esc>h :vsplit<CR>
+nmap <silent> <Esc>h :sp<CR>
+nmap <silent> <Esc>v :vsplit<CR>
 nmap <silent> <Esc>w :wincmd c<CR>
 nmap <silent> <Esc><Up> :wincmd k<CR>
 nmap <silent> <Esc><Down> :wincmd j<CR>
