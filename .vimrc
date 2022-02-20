@@ -180,19 +180,8 @@ imap <Esc>x <C-o><Esc>x
 imap <Esc>[ <C-o><Esc>[
 imap <Esc>] <C-o><Esc>]
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-nmap <F8> :SyntasticCheck<CR>
-nmap <leader><F8> :Errors<CR>
-nmap <leader><C-w> :lclose<CR>
-
 " Tabs
 nmap <C-t> :tabnew<CR>
-"nmap <C-w> :tabclose<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
 nmap <C-]> :+tabmove<CR>
@@ -204,6 +193,16 @@ imap <C-Left> <C-o><C-Left>
 imap <C-Right> <C-o><C-Right>
 imap <C-]> <C-o><C-]>
 imap <C-[> <C-o><C-[>
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+nmap <F8> :SyntasticCheck<CR>
+nmap <leader><F8> :Errors<CR>
+nmap <leader><C-w> :lclose<CR>
 
 " LaTeX settings
 let g:tex_flavor='latex'
