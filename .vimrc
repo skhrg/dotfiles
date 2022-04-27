@@ -133,10 +133,10 @@ imap <C-w> <C-o><C-w>
 nmap s i_<C-c>r
 
 " Arrow keys leave insert mode
-imap <Up> <C-c><Up>
-imap <Down> <C-c><Down>
-imap <Left> <C-c><Left>
-imap <Right> <C-c><Right>
+"imap <Up> <C-c><Up>
+"imap <Down> <C-c><Down>
+"imap <Left> <C-c><Left>
+"imap <Right> <C-c><Right>
 
 " Splits
 set splitbelow
