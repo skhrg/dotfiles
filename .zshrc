@@ -25,8 +25,6 @@ export TERMINAL="urxvt256c-ml"
 export READER="zathura"
 export FILE="nnn"
 export BROWSER="firefox"
-export SYSTEMD_PAGER="sh -c 'col -bx | bat -l man -p'"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 # ~ Cleanup
@@ -76,12 +74,21 @@ then
 fi
 alias dd="sudo dd status='progress'"
 alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
-#alias nnn="nwrap"
-alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nnn"
-alias mutt="printf '\033]0;Mail\007' && neomutt"
+if [ -x "$(command -v nwrap)" ];
+then
+    alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nwrap"
+fi
+if [ -x "$(command -v mutt)" ];
+then
+    alias mutt="printf '\033]0;Mail\007' && neomutt"
+else
+    alias mutt="ssh -t home printf '\033]0;Mail\007' && neomutt"
+fi
 if [ -x "$(command -v bat)" ];
 then
     alias cat="bat"
+    export SYSTEMD_PAGER="sh -c 'col -bx | bat -l man -p'"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
 alias tmux="tmux -2"
@@ -92,10 +99,6 @@ alias i3c="vim ~/.config/i3/config"
 alias vrc="vim ~/.vimrc"
 alias brc="vim ~/.bashrc"
 alias zrc="vim ~/.zshrc"
-
-alias omar="ssh -XC omar.pha.jhu.edu"
-alias kima="ssh -XC kima.pha.jhu.edu"
-alias avon="ssh -XC avon.pha.jhu.edu"
 
 alias gs='git status'
 alias ga='git add'
