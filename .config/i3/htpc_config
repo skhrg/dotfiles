@@ -266,5 +266,4 @@ exec compton -b -o 0 --vsync opengl-swc
 exec redshift
 exec dunst
 exec mpd
-exec sshfs emperor:/mnt/CASTLE /mnt/CASTLE -C
 exec_always /home/lordskh/.screenlayout/xrandr.sh
