@@ -54,3 +54,9 @@ then
     eval "$(zoxide init bash)"
     alias cd=z
 fi
+
+# fzf
+if [ -f ~/.fzf.bash ];
+then
+    source ~/.fzf.bash
+fi
