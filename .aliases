@@ -1,0 +1,65 @@
+# basic stuff
+alias please="sudo"
+alias install="sudo dnf install"
+alias update="sudo dnf update && flatpak update"
+alias q="exit"
+alias dd="sudo dd status='progress'"
+
+# cleanup
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+if [ -x "$(command -v abook)" ];
+then
+    alias abook="abook --datafile "$XDG_DATA_HOME"/abook/addressbook"
+fi
+
+# alternate programs
+if [ -x "$(command -v exa)" ];
+then
+    alias ls="exa"
+    alias ll="exa -l"
+fi
+if [ -x "$(command -v bat)" ];
+then
+    alias cat="bat"
+    export SYSTEMD_PAGER="sh -c 'col -bx | bat -l man -p'"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
+# stuff thats not everywhere
+if [ -x "$(command -v nwrap)" ];
+then
+    alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nwrap"
+fi
+if [ -x "$(command -v mutt)" ];
+then
+    alias mutt="printf '\033]0;Mail\007' && neomutt"
+else
+    alias mutt="ssh -t home printf '\033]0;Mail\007' && neomutt"
+fi
+if [ -x "$(command -v tmux)" ];
+then
+    alias tmux="tmux -2"
+fi
+if [ -d  ~/Documents/Projects/personal-site/_site ];
+then
+    alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/html/"
+fi
+
+# file shortcuts
+alias i3c="vim ~/.config/i3/config"
+alias vrc="vim ~/.vimrc"
+alias brc="vim ~/.bashrc"
+alias zrc="vim ~/.zshrc"
+
+# git stuff
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gac='git add --all && git commit -m'
+alias gpl='git pull'
+alias gpu='git push'
+alias gpp='git pull && git push'
+alias gpr='git pull --rebase'
+alias gprp='git pull --rebase && git pull'
+
+alias webcam='ffplay -f video4linux2 -i /dev/video0 -video_size 320x240 -fflags nobuffer'

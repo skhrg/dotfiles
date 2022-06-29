@@ -1,0 +1,24 @@
+if [ -f "$HOME/.fonts/devicons-regular.sh" ];
+then
+    source "$HOME/.fonts/devicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/fontawesome-regular.sh" ];
+then
+    source "$HOME/.fonts/fontawesome-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/octicons-regular.sh" ];
+then
+    source "$HOME/.fonts/octicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/pomicons-regular.sh" ];
+then
+    source "$HOME/.fonts/pomicons-regular.sh"
+fi
+
+if [ -f "$HOME/.fonts/programming-regular.sh" ];
+then
+    source "$HOME/.fonts/devicons-regular.sh"
+fi
