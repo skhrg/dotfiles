@@ -34,6 +34,7 @@ Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " Colors
@@ -87,6 +88,7 @@ set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
 set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{gutentags#statusline()}
 set statusline+=%*
 let g:airline_powerline_fonts=1
 
@@ -186,15 +188,15 @@ imap <Esc>] <C-o><Esc>]
 nmap <C-t> :tabnew<CR>
 nmap <C-Left> :tabprevious<CR>
 nmap <C-Right> :tabnext<CR>
-nmap <C-]> :+tabmove<CR>
-nmap <C-[> :-tabmove<CR>
+nmap <C-Up> :-tabmove<CR>
+nmap <C-Down> :+tabmove<CR>
 
 imap <C-t> <C-o><C-t>
 imap <C-w> <C-o><C-w>
 imap <C-Left> <C-o><C-Left>
 imap <C-Right> <C-o><C-Right>
-imap <C-]> <C-o><C-]>
-imap <C-[> <C-o><C-[>
+imap <C-Up> <C-o><C-Up>
+imap <C-Down> <C-o><C-Up>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 0
@@ -210,10 +212,10 @@ nmap <leader><C-w> :lclose<CR>
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_CustomTemplateDirectory='~/Documents/Projects/TexTemplates'
-nmap <C-Down> <Plug>IMAP_JumpForward
-nmap <C-Up> <Plug>IMAP_JumpBack
-imap <C-Down> <C-o><C-Down>
-imap <C-Up> <C-o><C-Up>
+nmap <C-f> <Plug>IMAP_JumpForward
+nmap <C-b> <Plug>IMAP_JumpBack
+imap <C-f> <C-o><C-f>
+imap <C-b> <C-o><C-b>
 
 " Spellcheck for files that I usually need it in
 autocmd FileType markdown setlocal spell
