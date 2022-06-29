@@ -91,6 +91,7 @@ alias sitecp="sudo cp -r ~/Documents/Projects/personal-site/_site/* /var/www/htm
 alias i3c="vim ~/.config/i3/config"
 alias vrc="vim ~/.vimrc"
 alias brc="vim ~/.bashrc"
+alias zrc="vim ~/.zshrc"
 
 alias omar="ssh -XC omar.pha.jhu.edu"
 alias kima="ssh -XC kima.pha.jhu.edu"
