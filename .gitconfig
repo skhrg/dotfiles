@@ -1,0 +1,7 @@
+[user]
+	email = accounts@saianeesh.com
+	name = Saianeesh Keshav Haridas
+[merge]
+    conflictstyle = diff3
+[core]
+	excludesfile = ~/.gitignore_global

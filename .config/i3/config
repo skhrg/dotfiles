@@ -389,4 +389,4 @@ exec blueman-applet
 exec mpd
 exec redshift
 exec dunst
-exec_always xrandr --output DVI-I-0 --off --output DVI-I-1 --primary --mode 1920x1080 --pos 1920x501 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 3840x0 --rotate right --output DP-0 --off --output DP-1 --off --output DVI-D-0 --mode 1920x1080 --pos 0x0 --rotate normal
+exec_always /home/lordskh/.screenlayout/xrandr.sh
