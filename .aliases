@@ -30,11 +30,11 @@ if [ -x "$(command -v nwrap)" ];
 then
     alias bnnn="printf '\33]50;%s\007' 'xft:Source Code Pro:size=22' && nwrap"
 fi
-if [ -x "$(command -v mutt)" ];
+if [ -x "$(command -v neomutt)" ];
 then
     alias mutt="printf '\033]0;Mail\007' && neomutt"
 else
-    alias mutt="ssh -t home printf '\033]0;Mail\007' && neomutt"
+    alias mutt="printf '\033]0;Mail\007' && ssh -t home 'zsh -lic neomutt'"
 fi
 if [ -x "$(command -v tmux)" ];
 then
