@@ -10,6 +10,7 @@ set t_RF=
 set t_u7=
 set t_fd=
 set t_fe=
+set rnu
 
 " vim-plug
 " Install if doesn't exist
