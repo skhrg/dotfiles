@@ -5,12 +5,11 @@ tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile	~/.local/state/msmtp/msmtp.log
 
 account proton
-tls_trust_file
-tls_fingerprint 9C:D5:5C:51:74:79:BB:73:AD:D8:6E:AC:A6:CE:50:8A:3A:EB:26:77:91:95:86:EA:CA:46:B0:80:1A:18:EF:8F 
+tls_certcheck off
 host 127.0.0.1
 port 1025
 from skh@saianeesh.com
-user saianeesh@protonmail.com
+user skh@saianeesh.com
 passwordeval "pass mutt-wizard-proton"
 
 

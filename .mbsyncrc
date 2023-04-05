@@ -1,7 +1,7 @@
 IMAPStore proton-remote
 Host 127.0.0.1
 Port 1143
-User saianeesh@protonmail.com
+User skh@saianeesh.com 
 PassCmd "pass mutt-wizard-proton"
 AuthMechs LOGIN
 SSLType None
