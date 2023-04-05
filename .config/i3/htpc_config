@@ -232,7 +232,7 @@ bar {
 # AVR Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id davrctl jester.kingdom volup
 bindsym XF86AudioLowerVolume exec --no-startup-id davrctl jester.kingdom voldown
-bindsym XF86AudioMute exec --no-startup-id davrctl jester.kingdom MUON 
+bindsym XF86AudioMute exec --no-startup-id davrctl jester.kingdom mute 
 
 # Media player controls
 bindsym XF86AudioPlay exec mpc toggle 

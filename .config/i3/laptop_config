@@ -255,7 +255,7 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
 # Run at startup
-exec_always feh --no-fehbg --bg-fill '/home/lordskh/Documents/Pictures/Wallpapers/LOGH.jpg' 
+exec_always feh --no-fehbg --bg-fill '/home/lordskh/Pictures/Wallpapers/LOGH.jpg' 
 exec compton -b -o 0 --vsync opengl-swc
 exec nm-applet
 exec blueman-applet
