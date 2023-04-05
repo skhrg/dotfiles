@@ -53,8 +53,10 @@ alias zrc="vim ~/.zshrc"
 
 # git stuff
 alias gs='git status'
+alias gd='git diff'
 alias ga='git add'
 alias gc='git commit -m'
+alias gca='get commit --amend'
 alias gac='git add --all && git commit -m'
 alias gpl='git pull'
 alias gpu='git push'
