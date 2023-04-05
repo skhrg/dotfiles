@@ -35,7 +35,10 @@ Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 
 " Colors
@@ -44,6 +47,9 @@ colorscheme gruvbox
 syntax enable
 set background=dark
 let g:gruvbox_italic=1
+let g:rainbow_active=1
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Enable filetype stuff
 filetype on
