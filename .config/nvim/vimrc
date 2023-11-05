@@ -1,0 +1,139 @@
+" Basic stuff
+set nocompatible
+set history=50
+set ruler
+let mapleader = " "
+set t_BE=
+set t_RV=
+set t_RB=
+set t_RF=
+set t_u7=
+set t_fd=
+set t_fe=
+set rnu
+
+" Colors
+set t_Co=256
+syntax enable
+set background=dark
+
+" Enable filetype stuff
+filetype on
+filetype indent on
+filetype plugin on
+
+" Visualize things better
+set hlsearch
+set nu
+set showmatch
+set showmode
+
+" Wildcard stuff
+set wildchar=<TAB>
+set wildmenu
+
+" Indentation stuff
+set autoindent
+set copyindent
+set smarttab
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Map arrows to always work
+map <ESC>Od <C-Left>
+map <ESC>Oc <C-Right>
+map <ESC>Oa <C-Up>
+map <ESC>Ob <C-Down>
+
+" Closing and saving
+nmap <C-d> :w<CR>
+nmap <C-e> :q<CR>
+nmap <C-w> :bd<CR>
+
+imap <C-d> <C-o><C-d>
+imap <C-e> <C-o><C-e>
+imap <C-w> <C-o><C-w>
+
+" Insert single char
+nmap s i_<C-c>r
+
+" Splits
+set splitbelow
+set splitright
+
+nmap <silent> <Esc>h :sp<CR>
+nmap <silent> <Esc>v :vsplit<CR>
+nmap <silent> <Esc>w :wincmd c<CR>
+nmap <silent> <Esc><Up> :wincmd k<CR>
+nmap <silent> <Esc><Down> :wincmd j<CR>
+nmap <silent> <Esc><Left> :wincmd h<CR>
+nmap <silent> <Esc><Right> :wincmd l<CR>
+nmap <silent> <Esc>. :wincmd ><CR>
+nmap <silent> <Esc>, :wincmd <<CR>
+nmap <silent> <Esc>; :wincmd -<CR>
+nmap <silent> <Esc>' :wincmd +<CR>
+nmap <silent> <Esc>= :wincmd =<CR>
+nmap <silent> <Esc>t :wincmd T<CR>
+nmap <silent> <Esc>x :wincmd x<CR>
+nmap <silent> <Esc>[ :wincmd R<CR>
+nmap <silent> <Esc>] :wincmd r<CR>
+nmap <silent> <leader><Esc><Up> :wincmd K<CR>
+nmap <silent> <leader><Esc><Down> :wincmd J<CR>
+nmap <silent> <leader><Esc><Left> :wincmd H<CR>
+nmap <silent> <leader><Esc><Right> :wincmd L<CR>
+
+imap <Esc>h <C-o><Esc>h
+imap <Esc>v <C-o><Esc>v
+imap <Esc>w <C-o><Esc>w
+imap <Esc><Up> <C-o><Esc><Up>
+imap <Esc><Down> <C-o><Esc><Down>
+imap <Esc><Left> <C-o><Esc><Left>
+imap <Esc><Right> <C-o><Esc><Right>
+imap <Esc>. <C-o><Esc>.
+imap <Esc>, <C-o><Esc>,
+imap <Esc>; <C-o><Esc>;
+imap <Esc>' <C-o><Esc>'
+imap <Esc>= <C-o><Esc>=
+imap <Esc>t <C-o><Esc>t
+imap <Esc>x <C-o><Esc>x
+imap <Esc>[ <C-o><Esc>[
+imap <Esc>] <C-o><Esc>]
+
+" Tabs
+nmap <C-t> :tabnew<CR>
+nmap <C-Left> :tabprevious<CR>
+nmap <C-Right> :tabnext<CR>
+nmap <C-Up> :-tabmove<CR>
+nmap <C-Down> :+tabmove<CR>
+
+imap <C-t> <C-o><C-t>
+imap <C-w> <C-o><C-w>
+imap <C-Left> <C-o><C-Left>
+imap <C-Right> <C-o><C-Right>
+imap <C-Up> <C-o><C-Up>
+imap <C-Down> <C-o><C-Up>
+
+" Spellcheck for files that I usually need it in
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown set complete+=kspell
+autocmd FileType text setlocal spell
+autocmd FileType text set complete+=kspell
+autocmd FileType tex setlocal spell
+autocmd FileType tex set complete+=kspell
+autocmd FileType mail setlocal spell
+autocmd FileType mail set complete+=kspell
+
+" PDF production stuff
+command PDFtex Silent call Tex_CompileLatex()
+command PDF Silent exec "!pandoc % -o %:r.pdf &"
+command PDFview Silent exec "!zathura '%:r.pdf' &"
+command PDFbeamer Silent exec "!pandoc -t beamer % -o %:r.pdf &"
+
+nmap <C-p> :w<bar>:PDF<CR>
+autocmd FileType tex nmap <C-p> :w<bar>:PDFtex<CR>
+autocmd BufRead,BufNewFile *.bmd nmap <C-p> :w<bar>:PDFbeamer<CR>
+autocmd BufRead,BufNewFile *.bmd set filetype=markdown
+imap <C-p> <C-o><C-p>
+nmap <leader><C-p> :PDFview<CR>

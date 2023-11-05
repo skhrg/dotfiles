@@ -3,3 +3,4 @@
 .ssh/known_hosts*
 .config/mpv/watch_later/
 .vim/plugged
+.config/nvim/lazy-lock.json
