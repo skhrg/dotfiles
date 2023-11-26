@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.cmd('source ~/.config/nvim/vimrc')
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.directory = "."
 
 -- Plugin management
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
