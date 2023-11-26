@@ -125,6 +125,11 @@ autocmd FileType tex set complete+=kspell
 autocmd FileType mail setlocal spell
 autocmd FileType mail set complete+=kspell
 
+" Better silence that redraws
+command -nargs=1 Silent
+            \   execute 'silent ' . <q-args>
+            \ | execute 'redraw!'
+
 " PDF production stuff
 command PDFtex Silent call Tex_CompileLatex()
 command PDF Silent exec "!pandoc % -o %:r.pdf &"
