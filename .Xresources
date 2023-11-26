@@ -17,7 +17,7 @@ Xft.rgba: rgb
 ! Perl extensions
 URxvt.perl-ext-common: default,matcher,resize-font,clipboard-osc,searchable-scrollback
 ! Set font
-URxvt*font: xft:Source Code Pro:size=12
+URxvt*font: xft:Iosevka\ Nerd\ Font:size=12
 URxvt.letterSpace: 0
 ! Clicable URLs
 URxvt.url-launcher: /usr/bin/xdg-open
