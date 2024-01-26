@@ -35,11 +35,13 @@ require("lazy").setup({
         lazy = False},
     { "ms-jpq/coq.artifacts"},
     { "ray-x/lsp_signature.nvim"},
+    { "jbyuki/nabla.nvim"},
+    { "nacro90/numb.nvim"},
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 })
 -- To add down the line:
 -- vimtex
 -- ALE
--- treesitter
 -- auto-pandoc
 -- dropbar?
 require("fzf-lua").setup()
@@ -54,6 +56,9 @@ require("lsp_signature").setup()
 local coq = require("coq")
 require("lspconfig").pyright.setup{coq.lsp_ensure_capabilities()}
 require("lspconfig").clangd.setup{coq.lsp_ensure_capabilities()}
+
+vim.keymap.set('n', '<Leader>p', require("nabla").popup)
+require("numb").setup()
 
 -- Colors
 vim.o.background = "dark"
