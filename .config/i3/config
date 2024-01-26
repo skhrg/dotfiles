@@ -30,13 +30,13 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256c-ml
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id urxvt256c-ml -title 'fzfmenu' -e bash -c 'i3-dmenu-desktop --dmenu=fzf'
+bindsym $mod+d exec --no-startup-id kitty --title 'fzfmenu' bash -c 'i3-dmenu-desktop --dmenu=fzf'
 for_window [title="fzfmenu"] floating enable
 
 # change focus
@@ -122,9 +122,9 @@ set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
 
-set $m0 DP-0
-set $m1 DP-4
-set $m2 HDMI-0
+set $m0 DisplayPort-0
+set $m1 DisplayPort-1
+set $m2 HDMI-A-0
 
 # set workspace default monitors
 workspace $wsF1 output $m0 
@@ -312,9 +312,9 @@ bar {
 bar {
     output $m1
     tray_output none
-    status_command bumblebee-status -t gruvbox-powerline \
-        -m load cpu memory disk:root disk:home disk:CASTLE network_traffic nic datetime \
-        -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/mnt/CASTLE nic.exclude=vmnet1,vmnet2,vmnet8,virbr0,virbr0-nic,lo
+    status_command /home/lordskh/.local/bin/bumblebee-status -t gruvbox-powerline \
+      -m load cpu memory disk:root disk:home disk:CASTLE network_traffic nic datetime \
+      -p datetime.format='%b-%d %H:%M:%S' root.path=/ home.path=/home CASTLE.path=/mnt/CASTLE nic.exclude=vmnet1,vmnet2,vmnet8,virbr0,virbr0-nic,lo
 	colors {
 		background $bg-color
 	    separator $text-color
@@ -329,7 +329,7 @@ bar {
 bar {
     output $m2
     tray_output $m2
-    status_command bumblebee-status -t gruvbox-powerline \
+    status_command /home/lordskh/.local/bin/bumblebee-status -t gruvbox-powerline \
         -m mpd dnf pasource pasink weather datetime \
         -p datetime.format='%b-%d %H:%M:%S' weather.left-click="urxvt256c-ml -e bash -c 'curl wttr.in/?m && fish'"
 	colors {
@@ -358,9 +358,9 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 # Application shortcuts
-bindsym $mod+b exec firefox-x11
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=16' -e ~/.local/bin/nwrap
-bindsym $mod+c exec urxvt256c-ml -fn 'xft:Source Code Pro:size=16' -e ~/.local/bin/nwrap /mnt/CASTLE
+bindsym $mod+b exec firefox
+bindsym $mod+n exec kitty -o font_size=16 ~/.local/bin/nwrap
+bindsym $mod+c exec kitty -o font_size=16 ~/.local/bin/nwrap /mnt/CASTLE
 
 # Lock screen
 bindsym $mod+p exec i3lock -e -i '/home/lordskh/Documents/Pictures/Wallpapers/i3lock.png' 
@@ -377,12 +377,8 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 
 bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' # Area selection
 
-# Calculator
-bindsym $mod+m exec --no-startup-id urxvt256c-ml -title 'qcalc' -g 50x15 -e bash -c 'qcalc'
-for_window [title="qcalc"] floating enable
-
 # Run at startup
-exec_always feh --no-fehbg --bg-fill  '/home/lordskh/Pictures/Wallpapers/CLASS_Vertical.jpg' '/home/lordskh/Pictures/Wallpapers/CLASS.jpg' '/home/lordskh/Pictures/Wallpapers/Sky.jpg'
+exec_always feh --no-fehbg --bg-fill '/home/lordskh/Pictures/Wallpapers/Sky.jpg' '/home/lordskh/Pictures/Wallpapers/CLASS_Vertical.jpg' '/home/lordskh/Pictures/Wallpapers/CLASS.jpg' 
 exec compton -b -o 0 --vsync opengl-swc 
 exec nm-applet
 exec blueman-applet

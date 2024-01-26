@@ -12,13 +12,13 @@ font pango:monospace 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256c-ml -fn 'xft:Iosevka\ Nerd\ Font:size=18'
+bindsym $mod+Return exec kitty -o font_size=18
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id urxvt256c-ml -title 'fzfmenu' -e bash -c 'i3-dmenu-desktop --dmenu=fzf'
+bindsym $mod+d exec --no-startup-id kitty --title 'fzfmenu' bash -c 'i3-dmenu-desktop --dmenu=fzf'
 for_window [title="fzfmenu"] floating enable
 
 # change focus
@@ -40,7 +40,6 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
@@ -240,8 +239,8 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 # Application shortcuts
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Iosevka\ Nerd\ Font:size=24' -e ~/.local/bin/nwrap
-bindsym $mod+c exec urxvt256c-ml -fn 'xft:Iosevka\ Nerd\ Font:size=24' -e ~/.local/bin/nwrap /mnt/CASTLE
+bindsym $mod+n exec kitty -o font_size=24 ~/.local/bin/nwrap
+bindsym $mod+c exec kitty -o font_size=24 ~/.local/bin/nwrap /mnt/CASTLE
 bindsym $mod+b exec firefox
 
 # Lock Screen
@@ -266,4 +265,5 @@ exec compton -b -o 0 --vsync opengl-swc
 exec redshift
 exec dunst
 exec mpd
-exec_always /home/lordskh/.screenlayout/xrandr.sh
+# exec_always /home/lordskh/.screenlayout/xrandr.sh
+# exec echo "Xft.dpi: 150" | xrdb -m
