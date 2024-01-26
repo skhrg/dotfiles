@@ -4,3 +4,4 @@
 .config/mpv/watch_later/
 .vim/plugged
 .config/nvim/lazy-lock.json
+*.sqlite
