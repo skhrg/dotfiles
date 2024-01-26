@@ -6,13 +6,13 @@ fi
 export PATH
 
 # Default programs:
-if [ -x "$(command -v vim)" ];
+if [ -x "$(command -v nvim)" ];
 then
-    export EDITOR="vim"
+    export EDITOR="nvim"
 fi
-if [ -x "$(command -v urxvt256c-ml)" ];
+if [ -x "$(command -v kitty)" ];
 then
-    export TERMINAL="urxvt256c-ml"
+    export TERMINAL="kitty"
 fi
 if [ -x "$(command -v zathura)" ];
 then
