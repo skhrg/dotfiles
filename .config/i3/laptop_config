@@ -12,13 +12,13 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt256c-ml
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id urxvt256c-ml -title 'fzfmenu' -e bash -c 'i3-dmenu-desktop --dmenu=fzf'
+bindsym $mod+d exec --no-startup-id kitty --title 'fzfmenu' bash -c 'i3-dmenu-desktop --dmenu=fzf'
 for_window [title="fzfmenu"] floating enable
 
 # change focus
@@ -235,7 +235,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Application shortcuts
-bindsym $mod+n exec urxvt256c-ml -fn 'xft:Source Code Pro:size=22' -e ~/.local/bin/nwrap
+bindsym $mod+n exec kitty -o font_size=16 ~/.local/bin/nwrap
 bindsym $mod+b exec firefox
 
 # Lock Screen
