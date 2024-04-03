@@ -261,9 +261,8 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 
 # Run at startup
 exec_always feh --no-fehbg --bg-fill '/home/lordskh/Pictures/Wallpapers/Nazgul.jpg' 
-exec compton -b -o 0 --vsync opengl-swc
-exec redshift
+exec compton -b --backend glx --vsync opengl-swc
 exec dunst
 exec mpd
 # exec_always /home/lordskh/.screenlayout/xrandr.sh
-# exec echo "Xft.dpi: 150" | xrdb -m
+exec echo "Xft.dpi: 150" | xrdb -m
