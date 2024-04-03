@@ -41,19 +41,9 @@ then
     then
         source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
     fi
-    if [ -x "$(command -v powerline-daemon)" ];
+    if [ -x "$(command -v starship)" ];
     then
-        if [ -d "/usr/share/powerline" ];
-        then
-            export POWERLINEDIR="/usr/share/powerline"
-        elif [ -d "`python -m site --user-site`/powerline/bindings" ];
-        then
-            export POWERLINEDIR="`python -m site --user-site`/powerline/bindings"
-        fi
-        powerline-daemon -q
-        POWERLINE_BASH_CONTINUATION=1
-        POWERLINE_BASH_SELECT=1
-        . $POWERLINEDIR/zsh/powerline.zsh
+        eval "$(starship init zsh)"
     fi
 fi
 
