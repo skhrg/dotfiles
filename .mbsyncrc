@@ -4,7 +4,7 @@ Port 1143
 User skh@saianeesh.com 
 PassCmd "pass mutt-wizard-proton"
 AuthMechs LOGIN
-SSLType None
+TLSType None
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore proton-local
@@ -30,8 +30,8 @@ Port 993
 User sharida2@alumni.jh.edu
 PassCmd "oauth2ms"
 AuthMechs XOAUTH2
-SSLType IMAPS
-SSLVersion TLSv1.2
+TLSType IMAPS
+TLSVersions +1.2
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 PipelineDepth 50
 
