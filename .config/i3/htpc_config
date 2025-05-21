@@ -229,9 +229,9 @@ bar {
 #bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # AVR Volume control
-bindsym XF86AudioRaiseVolume exec --no-startup-id davrctl jester.kingdom volup
-bindsym XF86AudioLowerVolume exec --no-startup-id davrctl jester.kingdom voldown
-bindsym XF86AudioMute exec --no-startup-id davrctl jester.kingdom mute 
+bindsym XF86AudioRaiseVolume exec --no-startup-id davrctl 192.168.1.50 volup
+bindsym XF86AudioLowerVolume exec --no-startup-id davrctl 192.168.1.50 voldown
+bindsym XF86AudioMute exec --no-startup-id davrctl 192.168.150 mute 
 
 # Media player controls
 bindsym XF86AudioPlay exec mpc toggle 
@@ -261,8 +261,8 @@ bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'm
 
 # Run at startup
 exec_always feh --no-fehbg --bg-fill '/home/lordskh/Pictures/Wallpapers/Nazgul.jpg' 
-exec compton -b --backend glx --vsync opengl-swc
+# exec compton -b --backend glx --vsync opengl-swc
 exec dunst
 exec mpd
-# exec_always /home/lordskh/.screenlayout/xrandr.sh
+exec_always /home/lordskh/.screenlayout/xrandr.sh
 exec echo "Xft.dpi: 150" | xrdb -m
