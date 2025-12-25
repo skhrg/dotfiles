@@ -33,7 +33,16 @@ require("lazy").setup({
     { "ray-x/lsp_signature.nvim"},
     { "jbyuki/nabla.nvim"},
     { "nacro90/numb.nvim"},
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    {"vim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    {
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end
+    },
     {
   "neovim/nvim-lspconfig", -- REQUIRED: for native Neovim LSP integration
   lazy = false, -- REQUIRED: tell lazy.nvim to start this plugin at startup
