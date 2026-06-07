@@ -26,14 +26,14 @@ require("lazy").setup({
 	{ "nvim-tree/nvim-web-devicons"},
 	{ "nvim-tree/nvim-tree.lua"},
     { "numToStr/Comment.nvim"},
-    { "beauwilliams/statusline.lua"},
+    {'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' }},
     { "williamboman/mason.nvim"},
     { "neovim/nvim-lspconfig"},
     { "williamboman/mason-lspconfig.nvim"},
     { "ray-x/lsp_signature.nvim"},
     { "jbyuki/nabla.nvim"},
     { "nacro90/numb.nvim"},
-    {"vim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- {"vim-treesitter/nvim-treesitter", lazy = false, build = ":TSUpdate"},
     {
     "lervag/vimtex",
     lazy = false,     -- we don't want to lazy load VimTeX
@@ -86,6 +86,9 @@ require("mason-lspconfig").setup({
     ensure_installed = {"pyright", "clangd"}
 })
 require("lsp_signature").setup()
+require('lualine').setup({
+    options = { theme = 'gruvbox_dark' }
+})
 
 local coq = require("coq")
 require("lspconfig").pyright.setup{coq.lsp_ensure_capabilities()}
