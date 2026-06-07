@@ -2,10 +2,10 @@ ncmpcpp_directory = "~/.local/state/ncmpcpp"
 
 lyrics_directory = "~/.local/state/ncmpcpp/lyrics"
 
-visualizer_data_source = "/tmp/mpd.fifo"
-visualizer_output_name = "my_fifo"
-visualizer_in_stereo = "yes"
-visualizer_type = "spectrum"
-visualizer_look = "+|"
+# visualizer_data_source = "/tmp/mpd.fifo"
+# visualizer_output_name = "my_fifo"
+# visualizer_in_stereo = "yes"
+# visualizer_type = "spectrum"
+# visualizer_look = "+|"
 
 song_status_format = {%g - {%a{ - %b{ (%y)}} - }{%t{ (%N)}}}|{%f}
