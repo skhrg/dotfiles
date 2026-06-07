@@ -63,3 +63,4 @@ then
 fi
 
 export PYTHONBREAKPOINT=ipdb.set_trace
+export NIXOS_OZONE_WL=1

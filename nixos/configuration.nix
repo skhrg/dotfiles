@@ -5,21 +5,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  # imports =
+  #   [ # Include the results of the hardware scan.
+  #     ./hardware-configuration.nix
+  #   ];
+
+  system.stateVersion = "25.11";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "shogun"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -45,10 +40,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -66,25 +57,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lordskh = {
     isNormalUser = true;
     description = "lordskh";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
   };
 
   # Install firefox.
@@ -104,6 +83,7 @@
   vim
   keyd
   syncthing
+  killall
   # Archiving
   zip
   xz
@@ -114,12 +94,16 @@
   iperf3
   dnsutils
   socat
+  arp-scan
+  nmap
   # Utils
   xev
   wget
   file
   tree
   gnupg
+  tmux
+  ffmpeg
   # Monitoring
   strace
   ltrace
@@ -134,36 +118,71 @@
   ethtool
   pciutils
   usbutils
+  # Desktop
+  grim
+  slurp
+  wl-clipboard
+  dunst
+  pwvucontrol
   ];
   # Set the default editor to vim
   environment.variables.EDITOR = "vim";
   
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Enable Zsh program features and add to system's available shells
+  programs.zsh.enable = true;
 
-  # List services that you want to enable:
-  
+  # Set Zsh as the default shell for all users
+  users.defaultUserShell = pkgs.zsh;
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # Ensure the zsh path is included in /etc/shells for compatibility
+  environment.shells = with pkgs; [ zsh bash ];
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # Enable the gnome-keyring secrets vault. 
+  # Will be exposed through DBus to programs willing to store secrets.
+  services.gnome.gnome-keyring.enable = true;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  # enable Sway window manager
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  programs.waybar.enable = true;
+
+  # Greeter
+  services.greetd = {                                                      
+    enable = true;                                                         
+    settings = {                                                           
+      default_session = {                                                  
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";                                                  
+      };                                                                   
+    };                                                                     
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+    ];
+    wlr.enable = true;
+  };
+
+  # Fonts
+  fonts = {
+    fontconfig.enable = true; # Essential for font management
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans # For CJK characters
+      fira-code
+      noto-fonts-color-emoji
+      fira-code-symbols
+      liberation_ttf
+      source-code-pro
+      cascadia-code
+    ];
+  };
+
+  # Enable nix-ld
+  programs.nix-ld.enable = true;
 
 }

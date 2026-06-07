@@ -28,6 +28,8 @@
     [ { device = "/dev/disk/by-uuid/bd4d8562-5a4b-49c8-a170-25e9c8d53424"; }
     ];
 
+  boot.resumeDevice = "/dev/nvme0n1p3";
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

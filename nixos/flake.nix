@@ -12,9 +12,10 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.shogun = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration.nix
         ./shogun.nix
+        ./configuration.nix
         ./syncthing.nix
+        ./shogun_syncthing.nix
         home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
