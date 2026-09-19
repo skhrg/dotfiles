@@ -3,7 +3,7 @@
 {
   home.username = "lordskh";
   home.homeDirectory = "/home/lordskh";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   home.sessionVariables = {
     SHELL = "${pkgs.zsh}/bin/zsh";
@@ -23,8 +23,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    neofetch
     nnn
+    fastfetch
     neovim
     starship
     glow
@@ -37,7 +37,9 @@
     hunspellDicts.en_US
     uv
     freecad
-    qt6.full
+    qt6.qtbase
+    qt6.qtwayland
+    libGL
 
     # typesetting 
     pandoc
@@ -64,7 +66,7 @@
     zoxide
     bat
     ripgrep-all
-    wine
+    wine64
 
     # nix related
     nix-output-monitor

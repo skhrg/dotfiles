@@ -10,7 +10,7 @@
   #     ./hardware-configuration.nix
   #   ];
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -59,6 +59,9 @@
     pulse.enable = true;
   };
 
+  # udisks
+  services.udisks2.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lordskh = {
     isNormalUser = true;
@@ -84,6 +87,7 @@
   keyd
   syncthing
   killall
+  chromium
   # Archiving
   zip
   xz
@@ -96,6 +100,7 @@
   socat
   arp-scan
   nmap
+  networkmanagerapplet
   # Utils
   xev
   wget
@@ -104,6 +109,7 @@
   gnupg
   tmux
   ffmpeg
+  yazi
   # Monitoring
   strace
   ltrace
@@ -166,6 +172,11 @@
     ];
     wlr.enable = true;
   };
+  xdg.mime.defaultApplications = {
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+  };
 
   # Fonts
   fonts = {
@@ -184,5 +195,43 @@
 
   # Enable nix-ld
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    libGL
+    libglvnd
+    libxkbcommon
+    wayland
+  
+    stdenv.cc.cc.lib
+  
+    glib
+    dbus
+    zlib
+    zstd
+    fontconfig
+    freetype
+  
+    xorg.libX11
+    xorg.libXext
+    xorg.libXrender
+    xorg.libxcb
+    xorg.libXrandr
+    xorg.libXi
+    xorg.libXcursor
+    xorg.libXfixes
+    xorg.libXinerama
+    xorg.libXcomposite
+    xorg.libXdamage
+    xorg.xcbutilcursor
+    xorg.xcbutilkeysyms
+    xorg.xcbutilrenderutil
+  ];
+
+ services.udev.extraRules = ''
+  SUBSYSTEM=="usb", ATTR{idVendor}=="2972", ATTR{idProduct}=="0147", TAG+="uaccess", MODE="0666"
+
+  SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2972", ATTRS{idProduct}=="0147", TAG+="uaccess", MODE="0666"
+'';
+
 
 }
+
