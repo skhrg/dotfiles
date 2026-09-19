@@ -153,8 +153,12 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Projects/dotfiles/.config/zathura";
     };
     # sway 
-    ".config/sway/config" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Projects/dotfiles/.config/sway/laptop_config";
+    if builtins.hostname == "shogun" then {
+      ".config/sway/config" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Projects/dotfiles/.config/sway/laptop_config";
+      };
+    } else {
+      {}:
     };
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Documents/Projects/dotfiles/.config/waybar";
